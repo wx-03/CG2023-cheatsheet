@@ -1,4 +1,4 @@
-% TODO: definition of convolution
+% TODO: add definiton of DC value, stuff from tutorials
 \documentclass[landscape,a4paper]{extarticle}
 \usepackage{relsize}
 \usepackage{caption}
@@ -164,6 +164,8 @@
     $\beta > 0$: Advancing $x(t)$ by $\beta$ units of time (translate left along x-axis)
 
     \textbf{2.1.5 Convolution of 2 Signals}
+
+    $x(t)*y(t)=\int_{-\infty}^{\infty}x(\alpha)y(t-\alpha)\ d\alpha$
 
     \textbf{Properties of convolutions}
     \begin{enumerate}
@@ -589,8 +591,67 @@
     \end{Figure}
     \textbf{5.3.2 Signals with Unrestricted Band}
 
-    \textbf{5.3.2.1 3dB bandwidth}
+    \textbf{5.3.2.1 3dB Bandwidth}
 
-    3dB bandwidth is defined as the frequency where $|X(f)|=|X(0)|/\sqrt{2}$ first occurs when $f$ is increased from 0 Hz
+    \textbf{Lowpass signal:}
+    The frequency where $|X(f)|=|X(0)|/\sqrt{2}$ first occurs (or where $|X(f)|^2=|X(0)|^2/2$ first occurs) when $f$ is increased from 0 Hz.
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{images/3dB_lowpass.png}
+    \end{Figure}
+
+    \textbf{Bandpass signal:}
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{images/3dB_bandpass.png}
+    \end{Figure}
+    
+    \textbf{5.3.2.2 1st-null Bandwidth}
+
+    \textbf{Lowpass signal: } The frequency at which $|X(f)|=0$ first occurs when $f$ is increased from 0 Hz:
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{images/1stNull_lowpass.png}
+    \end{Figure}
+    \textbf{Bandpass signal: }
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{images/1stNull_bandpass.png}
+    \end{Figure}
+
+    \textbf{5.3.2.3 M\% Energy Containment Bandwidth}
+
+    Smallest bandwidth that contains at least M\% of the total signal energy $E = \int_{-\infty}^{\infty}E_x(f)\ df$
+
+    \textbf{Lowpass:}
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{images/MPercentEnergy_lowpass.png}
+    \end{Figure}
+    \textbf{Bandpass:}
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{images/MPercentEnergy_bandpass.png}
+    \end{Figure}
+
+    \textbf{5.3.2.4 M\% Power Containment Bandwidth}
+
+    The smallest bandwidth that contains at least M\% of the average signal power. For a periodic signal, the aerage power is given by
+    \[
+        P = \int_{-\infty}^{\infty}P_x(f)df=\sum_{k=-\infty}^{\infty}|c_k|^2
+    \]
+    where $f_p$(Hz) is the fundamental frequency and $c_k$'s are the Fourier series coefficients.
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{images/MPercentPower.png}
+    \end{Figure}
+    \[
+        B = Kf_p
+    \]
+    where $K$ is the smallest positive integer that satisfies 
+    \[
+        \sum_{k=-k}^{K}|c_k|^2 \geq \frac{M}{100} \times P
+    \]
+
 \end{multicols*}
 \end{document}
