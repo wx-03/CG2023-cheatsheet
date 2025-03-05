@@ -15,6 +15,7 @@
 \usepackage{xcolor}
 
 \let\bar\overline
+\setlength{\columnsep}{0.7em}
 
 % Configure image directory
 \graphicspath{{images/}}
@@ -55,7 +56,7 @@
 
     \textbf{1.2.2 Bounded signals}
 
-    A continuous-time signal $x(t)$ is bounded if there exists an $M$ such that $0 < M < \infty$ and $\forall t \ |x(t)| \leq M$ (has an upper andn lower range limit)
+    A continuous-time signal $x(t)$ is bounded if there exists an $M$ such that $0 < M < \infty$ and $\forall t \ |x(t)| \leq M$ (has an upper and lower range limit)
 
     \textbf{1.2.3 Absolutely integrable signals}
 
@@ -255,7 +256,7 @@
         &=\sum_{k=-\infty}^{\infty}c_ke^{j2\pi kf_pt} \tag{3.1a}
     \end{align*}
     \begin{align*}
-        c_k=\frac{1}{T_p}\int_{t_0}^{t_0+T_p}x_p(t)e^{-j2\pi kt/T_p}dt,\ \forall k \in \mathbb{Z} \tag{3.1b}
+        c_k=\frac{1}{T_p}\int_{t_0}^{t_0+T_p}x_p(t)e^{-j2\pi kt/T_p}dt, k \in \mathbb{Z} \tag{3.1b}
     \end{align*}
 
     \textbf{Trigonometric Fourier Series}
@@ -309,6 +310,12 @@
 
     \[
         X(t) \rightleftarrows x(-f) \tag{4.4}
+    \]
+
+    \centerline{or}
+
+    \[
+        X(-t) \rightleftarrows x(f)
     \]
 
     \textbf{Time Shifting}
@@ -532,7 +539,7 @@
     \]
     Windowed version of $x(t)$:
     \[
-        x_W(t)=x(t)\text{rect}(\frac{t}{2W}) \tag{5.5}
+        x_W(t)=x(t)\text{rect}\left(\frac{t}{2W}\right) \tag{5.5}
     \]
     \textbf{Parseval Power Theorem}
     \begin{align*}
