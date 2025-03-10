@@ -34,6 +34,8 @@
 \setlist[enumerate]{nosep, leftmargin=*}
 \setlist[itemize]{nosep, leftmargin=*}
 
+\newcommand{\sgn}{\text{sgn}}
+
 % No spaces before and after math mode
 \expandafter\def\expandafter\normalsize\expandafter{%
     \normalsize%
@@ -288,6 +290,21 @@
     \[
        x(t)=\int_{-\infty}^{\infty}X(f)e^{j2\pi ft}df \tag{4.1b} 
     \]
+
+    \textbf{Spectrum of exponentially decaying pulse}
+    \begin{align*}
+        x(t) &= Ae^{-\alpha t} u(t)\\
+        & = \begin{cases}
+            Ae^{-\alpha t}; &t > 0\\
+            0; &t < 0
+        \end{cases}\\
+        &\text{Assume } \alpha > 0
+    \end{align*}
+
+    \[
+        X(f) = \frac{A}{\alpha + j 2\pi f}
+    \]
+
     \textbf{4.2 Properties of Fourier Transform}
     \begin{itemize}
         \item $X(f)=\Im\{x(t)\}$ denotes the Fourier transform of $x(t)$
@@ -672,6 +689,21 @@
     \[
         \sum_{k=-k}^{K}|c_k|^2 \geq \frac{M}{100} \times P
     \]
+
+    \textbf{Random stuff}
+    
+    \begin{align*}
+        \angle j 2\pi f &= \tan^{-1}\left(\frac{2\pi f}{0}\right)\\
+        &= \begin{cases}
+            \tan^{-1}(\infty) &\text{if }f > 0\\
+            \tan^{-1}(-\infty) &\text{if }f < 0
+        \end{cases}\\
+        &= \begin{cases}
+            0.5 \pi &\text{if } f>0\\
+            -0.5 \pi &\text{if } f < 0
+        \end{cases}\\
+        &= 0.5\pi \sgn(f)
+    \end{align*}
 
 \end{multicols*}
 \end{document}
