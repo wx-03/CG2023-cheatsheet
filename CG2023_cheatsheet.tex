@@ -1,4 +1,3 @@
-% TODO: add definiton of DC value, stuff from tutorials
 \documentclass[landscape,a4paper]{extarticle}
 \usepackage{relsize}
 \usepackage{caption}
@@ -35,6 +34,13 @@
 \setlist[itemize]{nosep, leftmargin=*}
 
 \newcommand{\sgn}{\text{sgn}}
+
+\newcommand{\T}{\textbf{T}}
+
+\newcommand{\lap}[1]{\mathcal{L}\left\{#1\right\}}
+\newcommand{\invlap}[1]{\mathcal{L}^{-1}\left\{#1\right\}}
+
+\newcommand{\fourier}[1]{\Im\left\{#1\right\}}
 
 % No spaces before and after math mode
 \expandafter\def\expandafter\normalsize\expandafter{%
@@ -106,37 +112,37 @@
     \textbf{u(t):}
     \begin{Figure}
         \centering
-        \includegraphics[width=0.8\linewidth]{images/unitStep.png}
+        \includegraphics[width=0.8\linewidth]{unitStep.png}
     \end{Figure}
     \textbf{sgn(t):}
     \begin{Figure}
         \centering
-        \includegraphics[width=0.8\linewidth]{images/signum.png}
+        \includegraphics[width=0.8\linewidth]{signum.png}
     \end{Figure}
     \textbf{rect$\left( \frac{t}{T}\right)$:}
     \begin{Figure}
         \centering
-        \includegraphics[width=0.8\linewidth]{images/rect.png}
+        \includegraphics[width=0.8\linewidth]{rect.png}
     \end{Figure}
     \textbf{tri$\left( \frac{t}{T}\right)$:}
     \begin{Figure}
         \centering
-        \includegraphics[width=0.8\linewidth]{images/tri.png}
+        \includegraphics[width=0.8\linewidth]{tri.png}
     \end{Figure}
     \textbf{sinc$\left(\frac{t}{T}\right)$:}
     \begin{Figure}
         \centering
-        \includegraphics[width=0.8\linewidth]{images/sinc.png}
+        \includegraphics[width=0.8\linewidth]{sinc.png}
     \end{Figure}
     \textbf{$e^{-\alpha t}u(t)$: }
     \begin{Figure}
         \centering
-        \includegraphics[width=0.8\linewidth]{images/rightSidedDecayingExp.png}
+        \includegraphics[width=0.8\linewidth]{rightSidedDecayingExp.png}
     \end{Figure}
     \textbf{$e^{-\alpha |t|}$: }
     \begin{Figure}
         \centering
-        \includegraphics[width=0.8\linewidth]{images/twoSidedDecayingExp.png}
+        \includegraphics[width=0.8\linewidth]{twoSidedDecayingExp.png}
     \end{Figure}
     \textbf{Sinusoidal signals}
     \begin{align*}
@@ -426,11 +432,11 @@
     By duality, $\Im\{K\}=K\delta(f)$
     \begin{Figure}
         \centering
-        \includegraphics[width=0.8\linewidth]{images/fourierOfImpulse.png}
+        \includegraphics[width=0.8\linewidth]{fourierOfImpulse.png}
     \end{Figure}
     \begin{Figure}
         \centering
-        \includegraphics[width=0.8\linewidth]{images/fourierOfConstant.png}
+        \includegraphics[width=0.8\linewidth]{fourierOfConstant.png}
     \end{Figure}
 
     \textbf{4.4.1 Spectrm of Unit Step and Signum function}
@@ -456,7 +462,7 @@
     \end{align*}
     \begin{Figure}
         \centering
-        \includegraphics[width=0.8\linewidth]{images/continuousSpectrum_DC.png}
+        \includegraphics[width=0.8\linewidth]{continuousSpectrum_DC.png}
     \end{Figure}    
     \textbf{Complex Exponential}
     \begin{align*}
@@ -465,7 +471,7 @@
     \end{align*}
     \begin{Figure}
         \centering
-        \includegraphics[width=0.8\linewidth]{images/continuousSpectrum_complexExponential.png}
+        \includegraphics[width=0.8\linewidth]{continuousSpectrum_complexExponential.png}
     \end{Figure}
     \textbf{Cosine}
     \begin{align*}
@@ -474,7 +480,7 @@
     \end{align*}
     \begin{Figure}
         \centering
-        \includegraphics[width=0.8\linewidth]{images/continuousFreqSpectrum_Cos.png}
+        \includegraphics[width=0.8\linewidth]{continuousFreqSpectrum_Cos.png}
     \end{Figure}
     \textbf{Sine}
     \begin{align*}
@@ -495,7 +501,7 @@
 
     \begin{Figure}
         \centering
-        \includegraphics[width=0.8\linewidth]{images/continuousFreqSpectrum_Sine.png}
+        \includegraphics[width=0.8\linewidth]{continuousFreqSpectrum_Sine.png}
     \end{Figure}
 
     \textbf{Arbitrary periodic signals}
@@ -506,7 +512,7 @@
     \]
     \begin{Figure}
         \centering
-        \includegraphics[width=\linewidth]{images/continuousFreqSpectrum_periodic.png}
+        \includegraphics[width=\linewidth]{continuousFreqSpectrum_periodic.png}
     \end{Figure}
 
     \textbf{4.4.2.1 Spectrum of Dirac-$\delta$ Comb function}
@@ -517,7 +523,7 @@
 
     \begin{Figure}
         \centering
-        \includegraphics[width=\linewidth]{images/comb.png}
+        \includegraphics[width=\linewidth]{comb.png}
     \end{Figure}
 
     \[
@@ -525,7 +531,7 @@
     \]
     \begin{Figure}
         \centering
-        \includegraphics[width=\linewidth]{images/discreteFreqSpec_comb.png}
+        \includegraphics[width=\linewidth]{discreteFreqSpec_comb.png}
     \end{Figure}
     \begin{align*}
         \Im\{\text{comb}_\lambda(t)\} &= \text{COMB}_\lambda(f)\\
@@ -533,7 +539,7 @@
     \end{align*}
     \begin{Figure}
         \centering
-        \includegraphics[width=\linewidth]{images/continuousFreqSpectrum_comb.png}
+        \includegraphics[width=\linewidth]{continuousFreqSpectrum_comb.png}
     \end{Figure}
     
     \textbf{\uline{Chapter 5}}
@@ -614,7 +620,7 @@
     where B is defined as the bandwidth of the signal. 
     \begin{Figure}
         \centering
-        \includegraphics[width=\linewidth]{images/bandlimitedLowpassSignal.png}
+        \includegraphics[width=\linewidth]{bandlimitedLowpassSignal.png}
     \end{Figure}
     \textbf{Bandpass signal}
 
@@ -624,7 +630,7 @@
     where B is defined as the bandwidth of the signal
     \begin{Figure}
         \centering
-        \includegraphics[width=\linewidth]{images/bandlimitedBandpassSignal.png}
+        \includegraphics[width=\linewidth]{bandlimitedBandpassSignal.png}
     \end{Figure}
     \textbf{5.3.2 Signals with Unrestricted Band}
 
@@ -634,13 +640,13 @@
     The frequency where $|X(f)|=|X(0)|/\sqrt{2}$ first occurs (or where $|X(f)|^2=|X(0)|^2/2$ first occurs) when $f$ is increased from 0 Hz.
     \begin{Figure}
         \centering
-        \includegraphics[width=\linewidth]{images/3dB_lowpass.png}
+        \includegraphics[width=\linewidth]{3dB_lowpass.png}
     \end{Figure}
 
     \textbf{Bandpass signal:}
     \begin{Figure}
         \centering
-        \includegraphics[width=\linewidth]{images/3dB_bandpass.png}
+        \includegraphics[width=\linewidth]{3dB_bandpass.png}
     \end{Figure}
     
     \textbf{5.3.2.2 1st-null Bandwidth}
@@ -648,12 +654,12 @@
     \textbf{Lowpass signal: } The frequency at which $|X(f)|=0$ first occurs when $f$ is increased from 0 Hz:
     \begin{Figure}
         \centering
-        \includegraphics[width=\linewidth]{images/1stNull_lowpass.png}
+        \includegraphics[width=\linewidth]{1stNull_lowpass.png}
     \end{Figure}
     \textbf{Bandpass signal: }
     \begin{Figure}
         \centering
-        \includegraphics[width=\linewidth]{images/1stNull_bandpass.png}
+        \includegraphics[width=\linewidth]{1stNull_bandpass.png}
     \end{Figure}
 
     \textbf{5.3.2.3 M\% Energy Containment Bandwidth}
@@ -663,12 +669,12 @@
     \textbf{Lowpass:}
     \begin{Figure}
         \centering
-        \includegraphics[width=\linewidth]{images/MPercentEnergy_lowpass.png}
+        \includegraphics[width=\linewidth]{MPercentEnergy_lowpass.png}
     \end{Figure}
     \textbf{Bandpass:}
     \begin{Figure}
         \centering
-        \includegraphics[width=\linewidth]{images/MPercentEnergy_bandpass.png}
+        \includegraphics[width=\linewidth]{MPercentEnergy_bandpass.png}
     \end{Figure}
 
     \textbf{5.3.2.4 M\% Power Containment Bandwidth}
@@ -680,7 +686,7 @@
     where $f_p$(Hz) is the fundamental frequency and $c_k$'s are the Fourier series coefficients.
     \begin{Figure}
         \centering
-        \includegraphics[width=\linewidth]{images/MPercentPower.png}
+        \includegraphics[width=\linewidth]{MPercentPower.png}
     \end{Figure}
     \[
         B = Kf_p
@@ -689,5 +695,245 @@
     \[
         \sum_{k=-k}^{K}|c_k|^2 \geq \frac{M}{100} \times P
     \]
+
+    \textbf{\uline{Chapter 6}}
+
+    \textbf{6.1 Systems}
+
+    \begin{itemize}
+        \item A system is a mathematical model of a physical process that relates the input (or excitation) signal to the output (or response) signal.
+        \item With an input $x(t)$ and an output $y(t)$, the system may be viewed as a transformation (or mapping) of $x(t)$ into $y(t)$, mathematically expressed as 
+        \[
+            y(t) = \textbf{T}\left[x(t)\right] \tag{6.1}
+        \]
+    \end{itemize}
+
+    \textbf{6.2 Classification of Systems}
+
+    \textbf{6.2.1 Systems with Memory and Without Memory}
+
+    A system is said to be memoryless (or static) if its output at a given time is dependent on only the input at that time.
+
+    Otherwise, the system is said to have memory (or to be dynamic).
+
+    \textbf{6.2.2 Causal and Noncausal Systems}
+
+    A system is said to be causal (or non-anticipative) if its output, $y(t)$, at the present time depends on only the present and/or past values of its input, $x(t)$.
+
+    $\therefore$ not possible for a causal system to produce an output before an input is applied. $\therefore \forall t < 0\ y(t)=0$.
+
+    \textbf{6.2.3 Stable and Unstable Systems}
+
+    A system is BIBO stable (bounded-input/bounded-output) if for every bounded input $x(t)$ where
+
+    \[
+        \forall t\ |x(t)| \leq k \tag{6.2}
+    \]
+
+    the system produces a bounded output $y(t)$ where 
+
+    \[
+        \forall t\ |y(t)| \leq L \tag{6.3}
+    \]
+    in which $K$ and $L$ are positive constants.
+
+    \textbf{6.2.4 Linear and Nonlinear Systems}
+
+    A linear system is one that satisfies the following two conditions:
+    \begin{align*}
+        \begin{split}
+            \T\left[x_1(t) + x_2(t)\right] &= \T[x_1(t)] + \T[x_2(t)]\\
+            &= y_1(t) + y_2(t)
+        \end{split} \tag{6.4}
+    \end{align*}
+
+    \begin{align*}
+        \T[\alpha x(t)] = \alpha \T[x(t)] = \alpha y(t) \tag{6.5}
+    \end{align*}
+
+    (6.4) and (6.5) can be combined into:
+    \begin{align}
+        \begin{split}
+            &\T[\alpha_1x_1(t) + \alpha_2x_2(t)]\\
+            =&\ \alpha_1\T[x_1(t)] + \alpha_2\T[x_2(t)]\\
+            =&\ \alpha_1y_1(t) + \alpha_2y_2(t)
+        \end{split} \tag{6.6}
+    \end{align}
+
+    (6.6) is known as the superposition property.
+
+    Important property of linear systems: 
+    
+    $x(t) = 0 \implies y(t) = 0$
+
+    \textbf{6.2.5 Time-Invariant and Time-Varying Systems}
+
+    A system is time-invariant if a time shift (delay or advance) in the input signal, $x(t)$, causes the same time shift in the output signal, $y(t)$.
+
+    \[
+        \T[x(t-\tau)] = y(t-\tau) \tag{6.7}
+    \]
+
+    A time-varying system is one which does not satisfy (6.7).
+
+    \textbf{Laplace Transform}
+
+    \[
+        \tilde{F}(s) = \lap{f(t)} = \int_{0}^{\infty}f(t)e^{-st} dt \tag{6.8}
+    \]
+    where $s$ is a complex variable.
+
+    \textbf{Inverse Laplace Transform}
+    \[
+        f(t) = \invlap{\tilde{F}(s)} = \frac{1}{2\pi j} \int_{\gamma - j \infty}^{\gamma + j \infty}\tilde{F}(s)ds \tag{6.9}
+    \]
+    
+    % TODO: solving linear differential equation
+
+    \textbf{\uline{Chapter 7}}
+
+    \textbf{7.1 Impulse Response}
+
+    Impulse response, $h(t)$, of a continuous-time LTI system is defined as the response/output of the system when the input is a unit impulse, $\delta(t)$.
+
+    \[
+        \delta(t) \rightarrow \text{LTI system} \rightarrow h(t)
+    \]
+
+    where 
+
+    \[
+        h(t) = \T[\delta(t)] \tag{7.1}
+    \]
+
+    From replication property, 
+
+    \begin{align*}
+        x(t) = x(t) * \delta (t) = \int_{-\infty}^{\infty}x(\tau)\delta(t-\tau) d\tau \tag{7.2}
+    \end{align*}
+
+    Substituting (7.2) into (6.1), 
+
+    \begin{align*}
+        \begin{split}
+            y(t) &= \T[x(t)]\\
+            &= \T\left[\int_{-\infty}^{\infty}x(\tau)\delta(t-\tau) d\tau\right]\\
+            &= \int_{-\infty}^{\infty}x(\tau)\T[\delta(t-\tau)]d\tau
+        \end{split} \tag{7.3}
+    \end{align*}
+
+    As the system is time-invariant, by applying (6.7) to (7.1),
+
+    \[
+        h(t-\tau) = \T\left[\delta(t-\tau)\right] \tag{7.4}
+    \]
+
+    Sub (7.4) into (4.3):
+
+    \begin{align*}
+        \begin{split}
+            y(t) &= \int_{-\infty}^{\infty}x(\tau)h(t-\tau) d\tau\\
+            &= x(t) * h(t)
+        \end{split} 
+        \tag{7.5}
+    \end{align*}
+
+    Therefore
+    \[
+        \T[x(t)] = y(t) = x(t) * h(t)
+    \]
+
+    \textbf{7.1.1 Step Response}
+
+    Step response: the output of the system when input is unit step function
+
+    \begin{align*}
+        u(t) \rightarrow h(t) \rightarrow o(t) &= \int_{-\infty}^{\infty}h(\tau) u(t-\tau) d \tau\\
+        &= \int_{-\infty}^{t}h(\tau) d \tau
+    \end{align*}
+
+    Step response equals integration of impulse response:
+
+    \[
+        o(t) = \int_{-\infty}^{t}h(\tau) d\tau
+    \]
+
+    Impulse response equals differentiation of step response:
+    
+    \[
+        h(t) = \frac{d}{dt} o(t)
+    \]
+
+    \textbf{7.2 Frequency Response}
+
+    The frequency response ($H(f)$) of an LTI system is defined as the Fourier transform of the system impulse response $h(t)$
+
+    \[
+        H(f) = \fourier{h(t)} = \int_{-\infty}^{\infty} h(t) e^{-j2\pi ft} dt \tag{7.6}
+    \]
+
+    \begin{align*}
+        y(t) &= x(t) * h(t)\\
+        Y(f) &= X(f) \cdot H(f) \tag{7.7}
+    \end{align*}
+
+    \begin{Figure}
+        \centering
+        \includegraphics[width=0.6\linewidth]{LTI_hf_ht.jpg}
+    \end{Figure}
+
+    \[
+        H(f) = |H(f)| e^{j \angle H(f)} \tag{7.8}
+    \]
+
+    where $|H(f)|$ is called the magnitude response and $\angle H(f)$ is called the phase response of the system.
+
+    \textbf{7.3 Transfer Function}
+
+    The transfer function $\tilde{H}(s)$ of an LTI system is defined as the Laplace transform of $h(t)$
+
+    \[
+        \tilde{H}(s) = \lap{h(t)} = \int_{0}^{\infty}h(t) e^{-st} dt \tag{7.9}
+    \]
+
+    where $s = \sigma + j \omega$ is a complex variable.
+    \begin{align*}
+        y(t) &= x(t) * h(t)\\
+        \tilde{Y}(s) &= \tilde{X}(s) \cdot \tilde{H}(s) \tag{7.10}
+    \end{align*}
+    \begin{Figure}
+        \centering
+        \includegraphics[width=0.7\linewidth]{LTI_ht_hf_hs.jpg}        
+    \end{Figure}
+
+    \textbf{7.4 Relationship between Transfer Function and Frequency Response}
+
+    Substituting $s = j \omega$ into (7.9), we get 
+    \[
+        \left.\tilde{H}(s)\right|_{s=j\omega} = \tilde{H}(j \omega) = \int_{0}^{\infty}h(t)e^{-j \omega t} dt \tag{7.11}
+    \]
+
+    Sub $\omega = 2 \pi f$ into (7.11):
+    \[
+        \left.\tilde{H}(j\omega)\right|_{\omega = 2\pi f} = \int_{0}^{\infty} h(t) e^{-j2\pi f t}dt \tag{7.12}
+    \]
+
+    For causal LTI systems, $\forall t < 0\ h(t) = 0$. Hence (7.6) and (7.12) are equivalent.
+    \[
+        H(f) = \left.\tilde{H}(j \omega)\right|_{\omega=2\pi f} \tag{7.13}
+    \]
+
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{transferFunc_freqResponse.jpg}        
+    \end{Figure}
+
+    \[
+        \tilde{H}(j\omega) = |\tilde{H}(j\omega)|e^{j\angle \tilde{H}(j \omega)} \tag{7.14}
+    \]
+
+    where $|\tilde{H}(j \omega)|$ is called the magnitude response
+    and $\angle \tilde{H}(j \omega)$ is called the phase response of the system.
+
 \end{multicols*}
 \end{document}
