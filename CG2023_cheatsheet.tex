@@ -1014,6 +1014,130 @@
 
     The system is said to have $N$ poles and $M$ zeros, and the difference $N-M$ is called pole-zero excess.
 
+    \textbf{7.6.2 System Stability}
+
+    \textbf{BIBO Stable}
+    \begin{itemize}
+        \item All system poles lying on the left-half s-plane
+        \item $h(t)$ will converge to 0 as $t$ tends to infinity\\
+        $\lim_{t \to \infty} h(t) = 0$
+    \end{itemize}
+
+    E.g.
+
+    $\tilde{H}(s) = \frac{1}{s + \alpha}$
+
+    Pole: $s = - \alpha$
+
+    $h(t) = e^{-\alpha t} u(t)$
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{biboStable1.png}        
+    \end{Figure}
+
+    $\tilde{H}(s) = \frac{\omega_0}{(s + \alpha)^2 + \omega_0^2}$
+
+    Poles: $s_{1,2} = -\alpha \pm j\omega_0$
+
+    $h(t) = e^{-\alpha t} \sin (\omega_0 t) u (t)$
+
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{biboStable2.png}        
+    \end{Figure}
+
+    \textbf{Marginally Stable}
+    \begin{itemize}
+        \item One or more \textbf{non-repeated} system poles lying on the imaginary axis of the s-plane and no system pole lying on the right half s-plane.
+        \item $h(t)$ will not "blow up" and become unbounded, but neither will it converge to zero as $t$ tends to infinity.\\
+        $\lim_{t \to \infty} |h(t)| \neq \infty$ and $\lim_{t \to \infty} h(t) \neq 0$
+    \end{itemize}
+
+    E.g.
+
+    $\tilde{H}(s) = \frac{1}{s}$
+
+    Pole: $s = 0$
+
+    $h(t) = u(t)$
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{marginallyStable1.png}        
+    \end{Figure}
+
+    $\tilde{H}(s) = \frac{\omega_0}{s^2 + \omega_0^2}$
+
+    Poles: $s_{1,2} = \pm j\omega_0$
+
+    $h(t) = \sin (\omega_0 t) u (t)$
+
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{marginallyStable2.png}        
+    \end{Figure}
+
+    \textbf{Unstable (Case 1)}
+    \begin{itemize}
+        \item One or more system poles lying on the right-half s-plane
+        \item $h(t)$ will "blow up" and become unbounded as $t$ tends to infinity\\
+        $\lim_{t \to \infty}|h(t)| = \infty$
+    \end{itemize}
+
+    E.g.
+
+    $\tilde{H}(s) = \frac{1}{s - \alpha}$
+
+    Pole: $s = \alpha$
+
+    $h(t) = e^{\alpha t}u(t)$
+
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{unstableCase1_1.png}        
+    \end{Figure}
+
+    $\tilde{H}(s) = \frac{\omega_0}{(s - \alpha)^2 + \omega_0^2}$
+
+    Poles: $s_{1,2} = \alpha \pm j\omega_0$
+
+    $h(t) = e^{\alpha t}\sin (\omega_0 t) u (t)$
+
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{unstableCase1_2.png}        
+    \end{Figure}
+
+    \textbf{Unstable (Case 2)}
+    \begin{itemize}
+        \item One or more repeated system poles lying on the imaginary axis
+        \item $h(t)$ will "blow up" and become unbounded as $t$ tends to infinity\\
+        $\lim_{t \to \infty}|h(t)| = \infty$
+    \end{itemize}
+
+    E.g.
+
+    $\tilde{H}(s) = \frac{1}{s^2}$
+
+    Pole: $s_{1,2} = 0$
+
+    $h(t) = tu(t)$
+
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{unstableCase2_1.png}        
+    \end{Figure}
+
+    $\tilde{H}(s) = \frac{\omega_0}{(s^2 + \omega_0^2)^2}$
+
+    Poles: $s_{1,2,3,4} = \pm j\omega_0, \pm j \omega_0$
+
+    $h(t) = \frac{1}{2} \left[\omega_0^{-1}\sin(\omega_0 t) - t \cos(\omega_0 t)\right] u(t)$
+
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{unstableCase2_2.png}        
+    \end{Figure}
+
 
 \end{multicols*}
 \end{document}
