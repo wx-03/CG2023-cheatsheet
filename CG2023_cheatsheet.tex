@@ -1138,6 +1138,36 @@
         \includegraphics[width=\linewidth]{unstableCase2_2.png}        
     \end{Figure}
 
+    \textbf{7.7 First Order System (Standard Form)}
+
+    \textbf{7.7.1 Differential Eqn, Transfer Func, Impulse Response and Step Response}
+    \begin{itemize}
+        \item Differential equation:
+        \[
+            T\frac{dy(t)}{dt}+y(t)=Kx(t) \tag{7.26}
+        \]
+        where 
+        \begin{itemize}
+            \item $x(t)$: system input
+            \item $y(t)$: system output
+            \item $K$: DC gain
+            \item $T$: time-constant
+        \end{itemize}
+        \item Transfer Function $\tilde{H}(s)$:
+        \begin{align*}
+            &Ts\tilde{Y}(s) + \tilde{Y}(s) = K \tilde{X}(s)\\
+            &\rightarrow \tilde{H}(s) = \frac{\tilde{Y}(s)}{\tilde{X}(s)} = \frac{K}{Ts + 1} \tag{7.27}
+        \end{align*}
+        Pole: $s_1$ = $-\frac{1}{T}$
+        \item Impulse Response $h(t)$\\
+        $h(t) = \invlap{\tilde{H}(s)} = \frac{K}{T}e^{-t/T}u(t)$
+        \item Step Response $o(t)$
+        \begin{align*}
+            o(t) &= \int_{-\infty}^{t} h(\tau) d \tau = \invlap{\frac{1}{s}\tilde{H}(s)}\\
+            &= K\left[1-e^{-t/T}\right]u(t)
+        \end{align*}
+    \end{itemize}
+
 
 \end{multicols*}
 \end{document}
