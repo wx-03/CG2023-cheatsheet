@@ -1168,6 +1168,69 @@
         \end{align*}
     \end{itemize}
 
+    \textbf{7.8 Second Order System (Standard Form)}
+    \textbf{7.8.1 Differential Eqn and Transfer Func}
+    \begin{itemize}
+        \item Differential equation:
+        \[
+            \frac{d^2y(t)}{dt^2} + 2 \zeta \omega_n \frac{dy(t)}{dt} + \omega_n^2 y(t) = K \omega_n^2 x(t) \tag{7.28}
+        \]
+        where
+        \begin{itemize}
+            \item $x(t)$: system input
+            \item $y(t)$: system output
+            \item $\zeta$: damping ratio
+            \item $\omega_n$: undamped natural frequency (when $\zeta < 1$)
+            \item $K$: DC gain
+        \end{itemize}
+        \item Transfer function $\tilde{H}(s)$
+        \begin{align*}
+            &s^2 \tilde{Y}(s) + 2 \zeta \omega_ns\tilde{Y}(s) + \omega_n^2\tilde{Y}(s)\\ 
+            &= K \omega_n^2\tilde{X}(s)\\
+            &\implies \tilde{H}(s) = \frac{\tilde{Y}(s)}{\tilde{X}(s)} = \frac{K \omega_n^2}{s^2 + 2 \zeta \omega_n s + \omega_n^2} \tag{7.29}
+        \end{align*}
+        Poles: $s_{1,2} = -\omega_n \zeta \pm \omega_n\left(\zeta^2 - 1\right)^{1/2}$
+        \item Damping
+        \begin{Figure}
+            \centering
+            \includegraphics[width=\linewidth]{overdamped.png}                
+        \end{Figure}
+        \begin{Figure}
+            \centering
+            \includegraphics[width=\linewidth]{criticallyDamped_undamped.png}                
+        \end{Figure}
+        \begin{Figure}
+            \centering
+            \includegraphics[width=\linewidth]{underdamped.png}                
+        \end{Figure}
+    \end{itemize}
+
+    \textbf{7.8.2 Impulse Response and Step Response}
+    
+    \textbf{7.8.2.1 Overdamped System ($\zeta > 1$)}
+
+    % TODO: Complete 7.8.2
+
+    \textbf{\uline{Chapter 8}}
+
+    Bode plot: approximate visualization of frequency response, $\tilde{H}(j \omega)$ of a system
+    \begin{itemize}
+        \item Magnitude plot: plot of $\left|\tilde{H}(j \omega)\right|_{dB} = 20 \log_{10}\left(\left|\tilde{H}(j \omega)\right|\right) dB$
+        \item Phase plot: plot of $\angle \tilde{H}(j \omega)$ in degrees
+        \item $x$-axis is logarithmically scaled (semilog-$x$: scale is log, but labels are still linear)
+        \item Only positive frequency side visualized (which suffices for real systems as $|\tilde{H}(j \omega)|$ and $\angle \tilde{H}(j \omega)$ are even and odd functions of $\omega$ respectively)
+        \item 0 is not in the axis cuz it goes from 1 to 0.1 to 0.01 to 0.001...
+    \end{itemize}
+
+    \textbf{8.1 Construction of Bode Plots}
+
+    Need to exxpress (7.23b) in a suitable form for each of the following cases:
+    \begin{itemize}
+        \item Systems without integrator and differentiator
+        \item Systems with differentiators
+        \item Systems with integrators
+    \end{itemize}
+
 
 \end{multicols*}
 \end{document}
