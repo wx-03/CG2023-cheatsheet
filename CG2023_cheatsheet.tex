@@ -7,6 +7,7 @@
 \usepackage{microtype}
 \usepackage{pdfpages}
 \usepackage{amsmath, amssymb, amsthm}
+\usepackage{gensymb}
 \usepackage{anyfontsize}
 \usepackage[shortlabels]{enumitem}
 \usepackage{graphicx, float}
@@ -1231,6 +1232,93 @@
         \item Systems with integrators
     \end{itemize}
 
+    Basic systems:
+    \begin{enumerate}
+        \item $\tilde{H}(s) = K_{dc}$: DC gain (constant)
+        \item $\tilde{H}(s) = K_d s$: differentiator with gain $K_d$
+        \item $\tilde{H}(s) = K_i/s$: integrator with gain $K_i$
+        \item $\tilde{H}(s) = s/z_m + 1$: zero factor with unity DC gain ($\tilde{H}(0) = 1$)
+        \item $\tilde{H}(s) = \frac{1}{s/p_n + 1}$: pole factor with unity DC gain
+        \item $\tilde{H}(s) = \frac{\omega_n^2}{s^2+2\zeta\omega_ns + \omega_n^2}$: 2nd-order factor with unity DC gain
+    \end{enumerate}
+
+    \leavevmode\\
+    \textbf{DC gain ($\tilde{H}(s) = K_{dc}$)}
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{bode_dcGain.png}        
+    \end{Figure}
+
+    \textbf{Differentiator ($\tilde{H}(s) = K_d s$)}
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{bode_differentiator1.png}        
+    \end{Figure}
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{bode_differentiator2.png}        
+    \end{Figure}
+
+    \textbf{Integrator ($\tilde{H}(s) = K_i/s$)}
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{bode_integrator.png}        
+    \end{Figure}
+
+    \textbf{Zero factor ($\tilde{H}(s) = s/z_m + 1$)}
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{bode_zeroFactor.png}        
+    \end{Figure}
+
+    \textbf{Pole factor ($\tilde{H}(s) = \frac{1}{s/p_n + 1}$)}
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{bode_poleFactor.png}        
+    \end{Figure}
+
+    \textbf{2nd-order factor ($\tilde{H}(s) = \frac{\omega_n^2}{s^2+2\zeta\omega_ns + \omega_n^2}$)}
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{bode_2ndOrder.png}        
+    \end{Figure}
+
+    \textbf{8.2 Asymptotic Behavior of Bode Plots}
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{bode1.png}        
+    \end{Figure}
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{bode2.png}        
+    \end{Figure}
+
+    \textbf{Asymptotic phase of phase plot}
+
+    High frequency:
+    \begin{align*}
+        \lim_{\omega \to \infty} \angle \tilde{H}(j \omega) = \text{Pole-zero excess} \times (-90 \degree) \tag{8.4a}
+    \end{align*}
+
+    Low frequency:
+    \begin{align*}
+        &\lim_{\omega \to 0} \angle \tilde{H}(j \omega) \\
+        =& \left[\text{No. of }\int dt - \text{No. of } \frac{d}{dt}\right] \times (-90 \degree) \tag{8.4b}
+    \end{align*}
+
+    \textbf{Asymptotic slope of magnitude plot}
+
+    High frequency:
+    \begin{align*}
+        &\lim_{\omega \to \infty}\left[\text{Slope of } \left|\tilde{H}(j \omega)\right|\right]\\
+        =&\ [\text{Pole-zero excess}] \times (-20 \text{ dB/decade}) \tag{8.5a}
+    \end{align*}
+
+    Low frequency:
+    \begin{align*}
+        &\lim_{\omega \to 0}\left[\text{Slope of } \left|\tilde{H}(j \omega)\right|\right]\\
+        =& \left[\text{No. of} \int dt - \text{No. of } \frac{d}{dt}\right] \times (-20 \text{ dB/decade}) \tag{8.5a}
+    \end{align*}
 
 \end{multicols*}
 \end{document}
