@@ -36,6 +36,8 @@
 \setlist[itemize]{nosep, leftmargin=*}
 
 \newcommand{\sgn}{\text{sgn}}
+\newcommand{\rect}[1]{\operatorname{rect}\left(#1\right)}
+\newcommand{\sinc}[1]{\operatorname{sinc}\left(#1\right)}
 
 \newcommand{\T}{\textbf{T}}
 
@@ -1320,5 +1322,73 @@
         =& \left[\text{No. of} \int dt - \text{No. of } \frac{d}{dt}\right] \times (-20 \text{ dB/decade}) \tag{8.5a}
     \end{align*}
 
+    \textbf{\uline{Chapter 9}}
+
+    \textbf{\uline{9.1 Idealized LTI filters}}
+
+    \textbf{Ideal Low-Pass Filter (LPF)}
+    \begin{itemize}
+        \item Frequency response: $H(f) = A\rect{\frac{f}{2B}}$
+        \item Impulse response: $h(t) = 2AB\sinc{2Bt}$
+    \end{itemize}
+
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{idealLPF.png}
+    \end{Figure}
+
+    \textbf{Ideal Band-Pass Filter (BPF)}
+    \begin{itemize}
+        \item Frequency response:\\
+        $H(f) = A \left[\rect{\frac{f + f_0}{B}} + \rect{\frac{f - f_0}{B}}\right]$
+        \item Impulse response:\\
+        $h(t)=2AB\sinc{Bt}\cos{(2\pi f_0t)}$
+    \end{itemize}
+
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{idealBPF.png}
+    \end{Figure}
+
+    \textbf{\uline{9.2 Continuous-time Sampling and\\Reconstruction of Signals}}
+
+    \textbf{Sampling}
+
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{continuousTimeSampling.png}        
+    \end{Figure}
+
+    \textbf{Reconstruction}
+
+    \begin{Figure}
+        \centering
+        \includegraphics[width=\linewidth]{reconstruction.png}        
+    \end{Figure}
+
+    \textbf{Nyquist Sampling Theorem:}
+    \begin{itemize}
+        \item A band-limited signal, which has no frequency components higher than $f_m$ Hz ($f_m$ = bandwidth = highest freq component), may be completely described by specifying the values of the signal at insants of time separated by no more than $\frac{1}{2f_m}$ seconds.
+        \item A band-limited signal, which has no frequency components higher than $f_m$ Hz, may be completely recovered from a knowledge of its samples taken at a rate of no less than $2 f_m$ samples/second.
+    \end{itemize}
+
+    Nyquist sampling frequency / Nyquist rate $f_s = 2 f_m$
+
+    \textbf{\uline{9.3 Sampling Band-limited Bandpass\\Signal below Nyquist Rate}}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item Overlapping spectral images ($f_c > 0.5B$)
+        \[
+            f_s = 2f_c / k; \quad k = 1,2,\ldots, \lfloor 2f_c/B \rfloor \tag{9.2a}
+        \]
+        \item Un-aliased spectral images ($f_c > 1.5B$)
+
+        \[
+            \begin{split}
+                \frac{2f_c + B}{k + 1} \leq f_s \leq \frac{2f_c - B}{k};\\
+                k = 1,2,\ldots,\left\lfloor \frac{2f_c - B}{2B} \right\rfloor
+            \end{split} \tag{9.2b}
+        \]
+    \end{enumerate}
 \end{multicols*}
 \end{document}
