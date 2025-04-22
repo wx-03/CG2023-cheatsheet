@@ -70,23 +70,27 @@
 
     \textbf{1.2.2 Bounded signals}
 
-    A continuous-time signal $x(t)$ is bounded if there exists an $M$ such that $0 < M < \infty$ and $\forall t \ |x(t)| \leq M$ (has an upper and lower range limit)
+    $x(t)$ is bounded if 
+
+    $\exists M\ [(0 < M < \infty) \wedge (\forall t\ |x(t)| \leq M)]$
+
+    (got upper n lower range limit)
 
     \textbf{1.2.3 Absolutely integrable signals}
 
-    A continuous-time signal $x(t)$ is absolutely integrable if 
+    $x(t)$ is absolutely integrable if 
     \[
         \int_{-\infty}^{\infty}|x(t)| dt < \infty
     \]
 
-    \textbf{1.2.4 Periodc and aperiodic signals}
+    % \textbf{1.2.4 Periodc and aperiodic signals}
 
-    Periodic: there is a non-zero positive value, $T$, satisfying 
-    \[
-        x(t)=x(t+T) \ \forall t \tag{1.1}
-    \]
+    % Periodic: there is a non-zero positive value, $T$, satisfying 
+    % \[
+    %     x(t)=x(t+T) \ \forall t \tag{1.1}
+    % \]
 
-    Aperiodic: not periodic
+    % Aperiodic: not periodic
 
     \textbf{1.2.6 Energy and Power Signals}
 
@@ -164,30 +168,30 @@
 
     \textbf{2.1 Time-domain Operations}
 
-    \textbf{2.1.1 Time-Scaling}
+    % \textbf{2.1.1 Time-Scaling}
 
-    $x(\alpha t)$: Scale x-axis by a factor of $\frac{1}{\alpha}$
+    % $x(\alpha t)$: Scale x-axis by a factor of $\frac{1}{\alpha}$
 
-    $x(-t)$: Reflect about x-axis
+    % $x(-t)$: Reflect about x-axis
 
-    \textbf{2.1.2 Time-Shifting}
+    % \textbf{2.1.2 Time-Shifting}
 
-    $x(t-\beta)$:
+    % $x(t-\beta)$:
 
-    $\beta > 0$: Delaying $x(t)$ by $\beta$ units of time (translate right along x-axis)
+    % $\beta > 0$: Delaying $x(t)$ by $\beta$ units of time (translate right along x-axis)
 
-    $\beta > 0$: Advancing $x(t)$ by $\beta$ units of time (translate left along x-axis)
+    % $\beta > 0$: Advancing $x(t)$ by $\beta$ units of time (translate left along x-axis)
 
     \textbf{2.1.5 Convolution of 2 Signals}
 
     $x(t)*y(t)=\int_{-\infty}^{\infty}x(\alpha)y(t-\alpha)\ d\alpha$
 
-    \textbf{Properties of convolutions}
-    \begin{enumerate}
-        \item Commutative: $f * g = g * f$
-        \item Associative: $f * (g * h) = (f * g) * h$
-        \item Distributive: $f * (g + h) = (f * g) + (f * h)$
-    \end{enumerate}
+    % \textbf{Properties of convolutions}
+    % \begin{enumerate}
+    %     \item Commutative: $f * g = g * f$
+    %     \item Associative: $f * (g * h) = (f * g) * h$
+    %     \item Distributive: $f * (g + h) = (f * g) + (f * h)$
+    % \end{enumerate}
 
     \textbf{2.2 Dirac-$\delta$ function}
 
@@ -285,14 +289,14 @@
     \end{align*}
 
     \textbf{\uline{Chapter 4}}\\
-    \textbf{Dirichlet Conditions}\\
-    Conditions for existence of Fourier Transform:
-    \begin{enumerate}
-        \item $x(t)$ has only a finite number of maxima and minima in any finite time interval
-        \item $x(t)$ has only a finite number of discontinuities in any finite time interval
-        \item $x(t)$ is absolutely integrable
-    \end{enumerate}
-    3 is weak Dirichlet condition: satisfied by most energy signals, violated by all power signals.\\
+    % \textbf{Dirichlet Conditions}\\
+    % Conditions for existence of Fourier Transform:
+    % \begin{enumerate}
+    %     \item $x(t)$ has only a finite number of maxima and minima in any finite time interval
+    %     \item $x(t)$ has only a finite number of discontinuities in any finite time interval
+    %     \item $x(t)$ is absolutely integrable
+    % \end{enumerate}
+    % 3 is weak Dirichlet condition: satisfied by most energy signals, violated by all power signals.\\
     \textbf{4.1 Fourier Transform}\\
     \textbf{Forward Fourier Transform}
     \[
@@ -306,10 +310,10 @@
     \textbf{Spectrum of exponentially decaying pulse}
     \begin{align*}
         x(t) &= Ae^{-\alpha t} u(t)\\
-        & = \begin{cases}
-            Ae^{-\alpha t}; &t > 0\\
-            0; &t < 0
-        \end{cases}\\
+        % & = \begin{cases}
+        %     Ae^{-\alpha t}; &t > 0\\
+        %     0; &t < 0
+        % \end{cases}\\
         &\text{Assume } \alpha > 0
     \end{align*}
 
@@ -317,78 +321,78 @@
         X(f) = \frac{A}{\alpha + j 2\pi f}
     \]
 
-    \textbf{4.2 Properties of Fourier Transform}
-    \begin{itemize}
-        \item $X(f)=\Im\{x(t)\}$ denotes the Fourier transform of $x(t)$
-        \item $x(t)={\Im}^{-1}\{X(f)\}$ denotes the inverse Fourier transform of $X(f)$
-        \item $x(t) \rightleftarrows X(f)$ denotes a Fourier transform pair with the time-domain on the LHS and frequency-domain on the RHS.
-    \end{itemize}
-    \textbf{Linearity}
+    % \textbf{4.2 Properties of Fourier Transform}
+    % \begin{itemize}
+    %     \item $X(f)=\Im\{x(t)\}$ denotes the Fourier transform of $x(t)$
+    %     \item $x(t)={\Im}^{-1}\{X(f)\}$ denotes the inverse Fourier transform of $X(f)$
+    %     \item $x(t) \rightleftarrows X(f)$ denotes a Fourier transform pair with the time-domain on the LHS and frequency-domain on the RHS.
+    % \end{itemize}
+    % \textbf{Linearity}
 
-    If $x_1(t) \rightleftarrows X_1(f)$ and $x_2(t) \rightleftarrows X_2(f)$, then \[
-        \alpha x_1(t) + \beta x_2(t)\rightleftarrows \alpha X_1(f) + \beta X_2 (f) \tag{4.2}
-    \]
+    % If $x_1(t) \rightleftarrows X_1(f)$ and $x_2(t) \rightleftarrows X_2(f)$, then \[
+    %     \alpha x_1(t) + \beta x_2(t)\rightleftarrows \alpha X_1(f) + \beta X_2 (f) \tag{4.2}
+    % \]
 
-    \textbf{Time Scaling}
+    % \textbf{Time Scaling}
 
-    \[
-        x(\beta t) \rightleftarrows \frac{1}{|\beta|} X\left( \frac{f}{\beta}\right) \tag{4.3}
-    \]
+    % \[
+    %     x(\beta t) \rightleftarrows \frac{1}{|\beta|} X\left( \frac{f}{\beta}\right) \tag{4.3}
+    % \]
 
-    \textbf{Duality}
+    % \textbf{Duality}
 
-    \[
-        X(t) \rightleftarrows x(-f) \tag{4.4}
-    \]
+    % \[
+    %     X(t) \rightleftarrows x(-f) \tag{4.4}
+    % \]
 
-    \centerline{or}
+    % \centerline{or}
 
-    \[
-        X(-t) \rightleftarrows x(f)
-    \]
+    % \[
+    %     X(-t) \rightleftarrows x(f)
+    % \]
 
-    \textbf{Time Shifting}
+    % \textbf{Time Shifting}
 
-    \[
-        x(t-t_0) \rightleftarrows X(f)e^{-j2\pi ft_0} \tag{4.5}
-    \]
+    % \[
+    %     x(t-t_0) \rightleftarrows X(f)e^{-j2\pi ft_0} \tag{4.5}
+    % \]
 
-    \[
-        x(t+t_0) \rightleftarrows X(f)e^{j 2 \pi f t_0}
-    \]
+    % \[
+    %     x(t+t_0) \rightleftarrows X(f)e^{j 2 \pi f t_0}
+    % \]
 
-    \textbf{Frequency Shifting (Modulation)}
+    % \textbf{Frequency Shifting (Modulation)}
 
-    \[
-        x(t)e^{j2\pi f_0t} \rightleftarrows X(f-f_0) \tag{4.6}
-    \]
+    % \[
+    %     x(t)e^{j2\pi f_0t} \rightleftarrows X(f-f_0) \tag{4.6}
+    % \]
 
-    \[
-        x(t)e^{-j2\pi f_0t} \rightleftarrows X(f+f_0)
-    \]
+    % \[
+    %     x(t)e^{-j2\pi f_0t} \rightleftarrows X(f+f_0)
+    % \]
 
-    \textbf{Differentiation in the Time Domain}
+    % \textbf{Differentiation in the Time Domain}
 
-    \[
-        \frac{d}{dt}x(t) \rightleftarrows j2\pi f \cdot X(f) \tag{4.7}
-    \]
+    % \[
+    %     \frac{d}{dt}x(t) \rightleftarrows j2\pi f \cdot X(f) \tag{4.7}
+    % \]
 
-    \textbf{Integration in the Time Domain}
+    % \textbf{Integration in the Time Domain}
 
-    \[
-        \int_{-\infty}^{t}x(\tau)\ d\tau \rightleftarrows \frac{1}{j2\pi f}X(f) + \frac{1}{2}X(0)\delta(f) \tag{4.8}
-    \]
+    % \[
+    %     \int_{-\infty}^{t}x(\tau)\ d\tau \rightleftarrows \frac{1}{j2\pi f}X(f) + \frac{1}{2}X(0)\delta(f) \tag{4.8}
+    % \]
 
-    \textbf{Convolution in the Time Domain / Multiplication in the Frequency Domain}
-    \begin{align*}
-        &x_1(t) * x_2(t) \\
-        = &\int_{-\infty}^{\infty}x_1(\alpha)x_2(t-\alpha)\ d\alpha \rightleftarrows X_1(f)X_2(f) \tag{4.9a}
-    \end{align*}
+    % \textbf{Convolution in the Time Domain / Multiplication in the Frequency Domain}
+    % \begin{align*}
+    %     &x_1(t) * x_2(t) \\
+    %     = &\int_{-\infty}^{\infty}x_1(\alpha)x_2(t-\alpha)\ d\alpha \rightleftarrows X_1(f)X_2(f) \tag{4.9a}
+    % \end{align*}
 
-    \textbf{Multiplication in the Time Domain / Convolution in the Frequency Domain} 
-    \begin{align*}
-        x_1(t)x_2(t) \rightleftarrows &\int_{-\infty}^{\infty} X_1(\alpha)X_2(f-\alpha)\ d\alpha \\=&X_1(f)*X_2(f) \tag{4.9b}
-    \end{align*}
+    % \textbf{Multiplication in the Time Domain / Convolution in the Frequency Domain} 
+    % \begin{align*}
+    %     x_1(t)x_2(t) \rightleftarrows &\int_{-\infty}^{\infty} X_1(\alpha)X_2(f-\alpha)\ d\alpha \\=&X_1(f)*X_2(f) \tag{4.9b}
+    % \end{align*}
 
     \textbf{4.3 Spectral properties of a REAL signal}
     \begin{itemize}
@@ -436,14 +440,14 @@
     \]
 
     By duality, $\Im\{K\}=K\delta(f)$
-    \begin{Figure}
-        \centering
-        \includegraphics[width=0.8\linewidth]{fourierOfImpulse.png}
-    \end{Figure}
-    \begin{Figure}
-        \centering
-        \includegraphics[width=0.8\linewidth]{fourierOfConstant.png}
-    \end{Figure}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=0.8\linewidth]{fourierOfImpulse.png}
+    % \end{Figure}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=0.8\linewidth]{fourierOfConstant.png}
+    % \end{Figure}
 
     \textbf{4.4.1 Spectrm of Unit Step and Signum function}
 
@@ -619,21 +623,21 @@
 
     \textbf{Lowpass signal}
 
-    A signal $x(t)$ is said to be a bandlimited lowpass signal if its magnitude spectrum is concentrated around 0 Hz, and at the same time satisfies
-    \[
-        |X(f)|=0; \quad |f| > B \tag{5.14}
-    \]
-    where B is defined as the bandwidth of the signal. 
+    % A signal $x(t)$ is said to be a bandlimited lowpass signal if its magnitude spectrum is concentrated around 0 Hz, and at the same time satisfies
+    % \[
+    %     |X(f)|=0; \quad |f| > B \tag{5.14}
+    % \]
+    % where B is defined as the bandwidth of the signal. 
     \begin{Figure}
         \centering
         \includegraphics[width=\linewidth]{bandlimitedLowpassSignal.png}
     \end{Figure}
     \textbf{Bandpass signal}
 
-    A signal $x(t)$ is said to be a bandlimited bandpass signal if its magnitude spectrum is concentrated around a non-zero center frequency $f_c$, and at the same time satisfies \[
-        |X(f)|=0; \quad ||f|-f_c|>B/2 \tag{5.15}
-    \]
-    where B is defined as the bandwidth of the signal
+    % A signal $x(t)$ is said to be a bandlimited bandpass signal if its magnitude spectrum is concentrated around a non-zero center frequency $f_c$, and at the same time satisfies \[
+    %     |X(f)|=0; \quad ||f|-f_c|>B/2 \tag{5.15}
+    % \]
+    % where B is defined as the bandwidth of the signal
     \begin{Figure}
         \centering
         \includegraphics[width=\linewidth]{bandlimitedBandpassSignal.png}
@@ -643,7 +647,7 @@
     \textbf{5.3.2.1 3dB Bandwidth}
 
     \textbf{Lowpass signal:}
-    The frequency where $|X(f)|=|X(0)|/\sqrt{2}$ first occurs (or where $|X(f)|^2=|X(0)|^2/2$ first occurs) when $f$ is increased from 0 Hz.
+    % The frequency where $|X(f)|=|X(0)|/\sqrt{2}$ first occurs (or where $|X(f)|^2=|X(0)|^2/2$ first occurs) when $f$ is increased from 0 Hz.
     \begin{Figure}
         \centering
         \includegraphics[width=\linewidth]{3dB_lowpass.png}
@@ -657,7 +661,8 @@
     
     \textbf{5.3.2.2 1st-null Bandwidth}
 
-    \textbf{Lowpass signal: } The frequency at which $|X(f)|=0$ first occurs when $f$ is increased from 0 Hz:
+    \textbf{Lowpass signal: } 
+    % The frequency at which $|X(f)|=0$ first occurs when $f$ is increased from 0 Hz:
     \begin{Figure}
         \centering
         \includegraphics[width=\linewidth]{1stNull_lowpass.png}
@@ -706,31 +711,31 @@
 
     \textbf{6.1 Systems}
 
-    \begin{itemize}
-        \item A system is a mathematical model of a physical process that relates the input (or excitation) signal to the output (or response) signal.
-        \item With an input $x(t)$ and an output $y(t)$, the system may be viewed as a transformation (or mapping) of $x(t)$ into $y(t)$, mathematically expressed as 
-        \[
-            y(t) = \textbf{T}\left[x(t)\right] \tag{6.1}
-        \]
-    \end{itemize}
+    % \begin{itemize}
+    %     \item A system is a mathematical model of a physical process that relates the input (or excitation) signal to the output (or response) signal.
+    %     \item With an input $x(t)$ and an output $y(t)$, the system may be viewed as a transformation (or mapping) of $x(t)$ into $y(t)$, mathematically expressed as 
+    %     \[
+    %         y(t) = \textbf{T}\left[x(t)\right] \tag{6.1}
+    %     \]
+    % \end{itemize}
 
     \textbf{6.2 Classification of Systems}
 
     \textbf{6.2.1 Systems with Memory and Without Memory}
 
-    A system is said to be memoryless (or static) if its output at a given time is dependent on only the input at that time.
+    Memoryless: output at a given time is dependent on only the input at that time.
 
-    Otherwise, the system is said to have memory (or to be dynamic).
+    Otherwise, the system has memory / is dynamic.
 
     \textbf{6.2.2 Causal and Noncausal Systems}
 
-    A system is said to be causal (or non-anticipative) if its output, $y(t)$, at the present time depends on only the present and/or past values of its input, $x(t)$.
+    Causal (or non-anticipative): Its output, $y(t)$, at the present time depends on only the present and/or past values of its input, $x(t)$.
 
     $\therefore$ not possible for a causal system to produce an output before an input is applied. $\therefore \forall t < 0\ y(t)=0$.
 
     \textbf{6.2.3 Stable and Unstable Systems}
 
-    A system is BIBO stable (bounded-input/bounded-output) if for every bounded input $x(t)$ where
+    BIBO stable (bounded-input/bounded-output): For every bounded input $x(t)$ where
 
     \[
         \forall t\ |x(t)| \leq k \tag{6.2}
@@ -745,19 +750,7 @@
 
     \textbf{6.2.4 Linear and Nonlinear Systems}
 
-    A linear system is one that satisfies the following two conditions:
-    \begin{align*}
-        \begin{split}
-            \T\left[x_1(t) + x_2(t)\right] &= \T[x_1(t)] + \T[x_2(t)]\\
-            &= y_1(t) + y_2(t)
-        \end{split} \tag{6.4}
-    \end{align*}
-
-    \begin{align*}
-        \T[\alpha x(t)] = \alpha \T[x(t)] = \alpha y(t) \tag{6.5}
-    \end{align*}
-
-    (6.4) and (6.5) can be combined into:
+    Linear system satisfies the following:
     \begin{align}
         \begin{split}
             &\T[\alpha_1x_1(t) + \alpha_2x_2(t)]\\
@@ -774,7 +767,7 @@
 
     \textbf{6.2.5 Time-Invariant and Time-Varying Systems}
 
-    A system is time-invariant if a time shift (delay or advance) in the input signal, $x(t)$, causes the same time shift in the output signal, $y(t)$.
+    Time-invariant: a time shift (delay or advance) in the input signal, $x(t)$, causes the same time shift in the output signal, $y(t)$.
 
     \[
         \T[x(t-\tau)] = y(t-\tau) \tag{6.7}
@@ -800,7 +793,7 @@
 
     \textbf{7.1 Impulse Response}
 
-    Impulse response, $h(t)$, of a continuous-time LTI system is defined as the response/output of the system when the input is a unit impulse, $\delta(t)$.
+    Impulse response, $h(t)$: The response/output when the input is a unit impulse, $\delta(t)$.
     \[
         \delta(t) \rightarrow \text{LTI system} \rightarrow h(t)
     \]
@@ -810,39 +803,39 @@
         h(t) = \T[\delta(t)] \tag{7.1}
     \]
 
-    From replication property, 
+    % From replication property, 
 
-    \begin{align*}
-        x(t) = x(t) * \delta (t) = \int_{-\infty}^{\infty}x(\tau)\delta(t-\tau) d\tau \tag{7.2}
-    \end{align*}
+    % \begin{align*}
+    %     x(t) = x(t) * \delta (t) = \int_{-\infty}^{\infty}x(\tau)\delta(t-\tau) d\tau \tag{7.2}
+    % \end{align*}
 
-    Substituting (7.2) into (6.1), 
-    \begin{align*}
-        \begin{split}
-            y(t) &= \T[x(t)]\\
-            &= \T\left[\int_{-\infty}^{\infty}x(\tau)\delta(t-\tau) d\tau\right]\\
-            &= \int_{-\infty}^{\infty}x(\tau)\T[\delta(t-\tau)]d\tau
-        \end{split} \tag{7.3}
-    \end{align*}
+    % Substituting (7.2) into (6.1), 
+    % \begin{align*}
+    %     \begin{split}
+    %         y(t) &= \T[x(t)]\\
+    %         &= \T\left[\int_{-\infty}^{\infty}x(\tau)\delta(t-\tau) d\tau\right]\\
+    %         &= \int_{-\infty}^{\infty}x(\tau)\T[\delta(t-\tau)]d\tau
+    %     \end{split} \tag{7.3}
+    % \end{align*}
 
-    As the system is time-invariant, by applying (6.7) to (7.1),
+    % As the system is time-invariant, by applying (6.7) to (7.1),
 
+    % \[
+    %     h(t-\tau) = \T\left[\delta(t-\tau)\right] \tag{7.4}
+    % \]
+
+    % Sub (7.4) into (4.3):
+    % \begin{align*}
+    %     \begin{split}
+    %         y(t) &= \int_{-\infty}^{\infty}x(\tau)h(t-\tau) d\tau\\
+    %         &= x(t) * h(t)
+    %     \end{split} 
+    %     \tag{7.5}
+    % \end{align*}
+
+    % Therefore
     \[
-        h(t-\tau) = \T\left[\delta(t-\tau)\right] \tag{7.4}
-    \]
-
-    Sub (7.4) into (4.3):
-    \begin{align*}
-        \begin{split}
-            y(t) &= \int_{-\infty}^{\infty}x(\tau)h(t-\tau) d\tau\\
-            &= x(t) * h(t)
-        \end{split} 
-        \tag{7.5}
-    \end{align*}
-
-    Therefore
-    \[
-        \T[x(t)] = y(t) = x(t) * h(t)
+        \T[x(t)] = y(t) = x(t) * h(t) \tag{7.5}
     \]
 
     \textbf{7.1.1 Step Response}
@@ -865,19 +858,18 @@
 
     \textbf{7.2 Frequency Response}
 
-    The frequency response ($H(f)$) of an LTI system is defined as the Fourier transform of the system impulse response $h(t)$
+    Frequency response ($H(f)$): The Fourier transform of the system impulse response $h(t)$
     \[
         H(f) = \fourier{h(t)} = \int_{-\infty}^{\infty} h(t) e^{-j2\pi ft} dt \tag{7.6}
     \]
     \begin{align*}
-        y(t) &= x(t) * h(t)\\
         Y(f) &= X(f) \cdot H(f) \tag{7.7}
     \end{align*}
 
-    \begin{Figure}
-        \centering
-        \includegraphics[width=0.6\linewidth]{LTI_hf_ht.jpg}
-    \end{Figure}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=0.6\linewidth]{LTI_hf_ht.jpg}
+    % \end{Figure}
 
     \[
         H(f) = |H(f)| e^{j \angle H(f)} \tag{7.8}
@@ -887,7 +879,7 @@
 
     \textbf{7.3 Transfer Function}
 
-    The transfer function $\tilde{H}(s)$ of an LTI system is defined as the Laplace transform of $h(t)$
+    Transfer function $\tilde{H}(s)$: Laplace transform of $h(t)$
     \[
         \tilde{H}(s) = \lap{h(t)} = \int_{0}^{\infty}h(t) e^{-st} dt \tag{7.9}
     \]
@@ -983,7 +975,7 @@
     \begin{align*}
         \begin{split}
             \tilde{H}(s) &= \frac{\tilde{Y}(s)}{\tilde{X}(s)}\\
-            &= \left( \left. \sum_{m=0}^{M}b_ms^m \right/ \sum_{n=0}^{N}a_ns^n \right) \\
+            % &= \left( \left. \sum_{m=0}^{M}b_ms^m \right/ \sum_{n=0}^{N}a_ns^n \right) \\
             &= \frac{b_Ms^M + b_{M-1}s^{M-1} + \ldots + b_0}{a_Ns^N + a_{N-1}s^{N-1} + \ldots + a_0}
         \end{split} \tag{7.23a}
     \end{align*}
@@ -1004,13 +996,13 @@
 
     $\forall n \in \{1,2, \ldots , N\}$ 
     \begin{itemize}
-        \item $-p_n$ are roots of the denominator polynomial of $\tilde{H}(s)$
+        % \item $-p_n$ are roots of the denominator polynomial of $\tilde{H}(s)$
         \item $\tilde{H}(-p_n) = \infty$
         \item $-p_n$ are called \textbf{poles} of $\tilde{H}(s)$
     \end{itemize}
     $\forall m \in \{1,2, \ldots , M\}$ 
     \begin{itemize}
-        \item $-z_m$ are roots of the numerator polynomial of $\tilde{H}(s)$
+        % \item $-z_m$ are roots of the numerator polynomial of $\tilde{H}(s)$
         \item $\tilde{H}(-z_m) = 0$
         \item $-z_m$ are called \textbf{zeros} of $\tilde{H}(s)$
     \end{itemize}
@@ -1207,23 +1199,23 @@
             \includegraphics[width=\linewidth]{underdamped.png}                
         \end{Figure}
     \end{itemize}
-
-    \textbf{7.8.2 Impulse Response and Step Response}
     
-    \textbf{7.8.2.1 Overdamped System ($\zeta > 1$)}
-
-    % TODO: Complete 7.8.2
+    \begin{itemize}
+        \item Overdamped system: distinct real poles
+        \item Critically damped system: repeated real poles
+        \item Underdamped system: conjugate complex poles
+    \end{itemize}
 
     \textbf{\uline{Chapter 8}}
 
-    Bode plot: approximate visualization of frequency response, $\tilde{H}(j \omega)$ of a system
-    \begin{itemize}
-        \item Magnitude plot: plot of $\left|\tilde{H}(j \omega)\right|_{dB} = 20 \log_{10}\left(\left|\tilde{H}(j \omega)\right|\right) dB$
-        \item Phase plot: plot of $\angle \tilde{H}(j \omega)$ in degrees
-        \item $x$-axis is logarithmically scaled (semilog-$x$: scale is log, but labels are still linear)
-        \item Only positive frequency side visualized (which suffices for real systems as $|\tilde{H}(j \omega)|$ and $\angle \tilde{H}(j \omega)$ are even and odd functions of $\omega$ respectively)
-        \item 0 is not in the axis cuz it goes from 1 to 0.1 to 0.01 to 0.001...
-    \end{itemize}
+    % Bode plot: approximate visualization of frequency response, $\tilde{H}(j \omega)$ of a system
+    % \begin{itemize}
+    %     \item Magnitude plot: plot of $\left|\tilde{H}(j \omega)\right|_{dB} = 20 \log_{10}\left(\left|\tilde{H}(j \omega)\right|\right) dB$
+    %     \item Phase plot: plot of $\angle \tilde{H}(j \omega)$ in degrees
+    %     \item $x$-axis is logarithmically scaled (semilog-$x$: scale is log, but labels are still linear)
+    %     \item Only positive frequency side visualized (which suffices for real systems as $|\tilde{H}(j \omega)|$ and $\angle \tilde{H}(j \omega)$ are even and odd functions of $\omega$ respectively)
+    %     \item 0 is not in the axis cuz it goes from 1 to 0.1 to 0.01 to 0.001...
+    % \end{itemize}
 
     \textbf{8.1 Construction of Bode Plots}
 
