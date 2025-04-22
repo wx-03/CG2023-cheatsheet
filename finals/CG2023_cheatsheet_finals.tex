@@ -193,16 +193,7 @@
     %     \item Distributive: $f * (g + h) = (f * g) + (f * h)$
     % \end{enumerate}
 
-    \textbf{2.2 Dirac-$\delta$ function}
-
-    \[
-        \delta(t)=
-        \begin{cases}
-            \infty; &t=0\\
-            0; &t\neq0
-        \end{cases}
-    \]
-    \textbf{Properties: }
+    \textbf{Properties of Dirac-$\delta$: }
     \begin{enumerate}
         \item Symmetry:
         \[
@@ -214,28 +205,24 @@
         \]
         \item Sifting
         \begin{align*}
-            &\int_{-\infty}^{\infty} x(t)\delta(t-\lambda)dt\\
-            =\ &x(\lambda)\int_{-\infty}^{\infty}\delta(t-\lambda)dt=x(\lambda) \tag{2.5}
+            \int_{-\infty}^{\infty} x(t)\delta(t-\lambda)dt=x(\lambda) \tag{2.5}
         \end{align*}
         \item Replication
         \begin{align*}
-            &x(t)*\delta(t-\lambda)\\
-            =&\int_{-\infty}^{\infty}x(\zeta)\delta(t-\zeta-\lambda)d\zeta\\
-            =&\int_{-\infty}^{\infty}x(\zeta)\delta(\zeta-(t-\lambda))d\zeta=x(t-\lambda) \tag{2.6}
+            x(t)*\delta(t-\lambda)=x(t-\lambda) \tag{2.6}
         \end{align*}
     \end{enumerate}
-    \textbf{2.2.1 Dirac-$\delta$ Comb function}
-    \begin{align*}
-        &\sum_{n=-\infty}^{\infty}\delta(t-nT)\\
-        &= \ldots+\delta(t+T)+\delta(t)+\delta(t-T) + \ldots
-    \end{align*}
+    % \textbf{2.2.1 Dirac-$\delta$ Comb function}
+    % \begin{align*}
+    %     &\sum_{n=-\infty}^{\infty}\delta(t-nT)\\
+    %     &= \ldots+\delta(t+T)+\delta(t)+\delta(t-T) + \ldots
+    % \end{align*}
 
     \textbf{Convolution with Dirac-$\delta$ Comb function}
     \begin{align*}
         x_p(t)&=x(t)*\sum_n\delta(t-nT)\\
         &=\sum_n x(t-nT)
     \end{align*}
-    $x(t)$ is known as the generating function.
 
     \textbf{Multiplication with the Dirac-$\delta$ Comb function}
 
@@ -470,28 +457,28 @@
         &x_{dc}(t)=K \\
         &X_{dc}(f)=\Im\{k\}=K\Im\{1\}=K\delta(f)
     \end{align*}
-    \begin{Figure}
-        \centering
-        \includegraphics[width=0.8\linewidth]{continuousSpectrum_DC.png}
-    \end{Figure}    
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=0.8\linewidth]{continuousSpectrum_DC.png}
+    % \end{Figure}    
     \textbf{Complex Exponential}
     \begin{align*}
         &\tilde{x}(t) = Ke^{j2\pi f_0t} \\
         &\tilde{X}(f)=\Im\{Ke^{j2\pi f_0t}\} = K\delta(f-f_0)
     \end{align*}
-    \begin{Figure}
-        \centering
-        \includegraphics[width=0.8\linewidth]{continuousSpectrum_complexExponential.png}
-    \end{Figure}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=0.8\linewidth]{continuousSpectrum_complexExponential.png}
+    % \end{Figure}
     \textbf{Cosine}
     \begin{align*}
         &\Im\{K\cos{(2\pi f_0t)}\}\\
         =&\frac{K}{2}\delta(f-f_0)+\frac{K}{2}\delta(f+f_0)
     \end{align*}
-    \begin{Figure}
-        \centering
-        \includegraphics[width=0.8\linewidth]{continuousFreqSpectrum_Cos.png}
-    \end{Figure}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=0.8\linewidth]{continuousFreqSpectrum_Cos.png}
+    % \end{Figure}
     \textbf{Sine}
     \begin{align*}
         &\Im\{K\sin(2\pi f_0 t)\}\\
@@ -509,10 +496,10 @@
         \end{cases}
     \]
 
-    \begin{Figure}
-        \centering
-        \includegraphics[width=0.8\linewidth]{continuousFreqSpectrum_Sine.png}
-    \end{Figure}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=0.8\linewidth]{continuousFreqSpectrum_Sine.png}
+    % \end{Figure}
 
     \textbf{Arbitrary periodic signals}
 
@@ -531,26 +518,26 @@
         \text{comb}_\lambda(t) \triangleq \sum_n\delta(t-n\lambda)
     \]
 
-    \begin{Figure}
-        \centering
-        \includegraphics[width=\linewidth]{comb.png}
-    \end{Figure}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{comb.png}
+    % \end{Figure}
 
     \[
         c_k=\frac{1}{\lambda}
     \]
-    \begin{Figure}
-        \centering
-        \includegraphics[width=\linewidth]{discreteFreqSpec_comb.png}
-    \end{Figure}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{discreteFreqSpec_comb.png}
+    % \end{Figure}
     \begin{align*}
         \Im\{\text{comb}_\lambda(t)\} &= \text{COMB}_\lambda(f)\\
         &=\frac{1}{\lambda}\sum_k\delta(f-k/\lambda)
     \end{align*}
-    \begin{Figure}
-        \centering
-        \includegraphics[width=\linewidth]{continuousFreqSpectrum_comb.png}
-    \end{Figure}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{continuousFreqSpectrum_comb.png}
+    % \end{Figure}
     
     \textbf{\uline{Chapter 5}}
 
@@ -564,7 +551,6 @@
     \[
         E=\int_{-\infty}^{\infty}|x(t)|^2dt=\int_{-\infty}^{\infty}|X(f)|^2df \tag{5.2},
     \]
-    where $X(f)=\Im\{x(t)\}$ is the spectrum of the signal.
 
     \textbf{Energy Spectral Density}
     \[
@@ -1018,28 +1004,28 @@
         $\lim_{t \to \infty} h(t) = 0$
     \end{itemize}
 
-    E.g.
+    % E.g.
 
-    $\tilde{H}(s) = \frac{1}{s + \alpha}$
+    % $\tilde{H}(s) = \frac{1}{s + \alpha}$
 
-    Pole: $s = - \alpha$
+    % Pole: $s = - \alpha$
 
-    $h(t) = e^{-\alpha t} u(t)$
-    \begin{Figure}
-        \centering
-        \includegraphics[width=\linewidth]{biboStable1.png}        
-    \end{Figure}
+    % $h(t) = e^{-\alpha t} u(t)$
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{biboStable1.png}        
+    % \end{Figure}
 
-    $\tilde{H}(s) = \frac{\omega_0}{(s + \alpha)^2 + \omega_0^2}$
+    % $\tilde{H}(s) = \frac{\omega_0}{(s + \alpha)^2 + \omega_0^2}$
 
-    Poles: $s_{1,2} = -\alpha \pm j\omega_0$
+    % Poles: $s_{1,2} = -\alpha \pm j\omega_0$
 
-    $h(t) = e^{-\alpha t} \sin (\omega_0 t) u (t)$
+    % $h(t) = e^{-\alpha t} \sin (\omega_0 t) u (t)$
 
-    \begin{Figure}
-        \centering
-        \includegraphics[width=\linewidth]{biboStable2.png}        
-    \end{Figure}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{biboStable2.png}        
+    % \end{Figure}
 
     \textbf{Marginally Stable}
     \begin{itemize}
@@ -1048,28 +1034,28 @@
         $\lim_{t \to \infty} |h(t)| \neq \infty$ and $\lim_{t \to \infty} h(t) \neq 0$
     \end{itemize}
 
-    E.g.
+    % E.g.
 
-    $\tilde{H}(s) = \frac{1}{s}$
+    % $\tilde{H}(s) = \frac{1}{s}$
 
-    Pole: $s = 0$
+    % Pole: $s = 0$
 
-    $h(t) = u(t)$
-    \begin{Figure}
-        \centering
-        \includegraphics[width=\linewidth]{marginallyStable1.png}        
-    \end{Figure}
+    % $h(t) = u(t)$
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{marginallyStable1.png}        
+    % \end{Figure}
 
-    $\tilde{H}(s) = \frac{\omega_0}{s^2 + \omega_0^2}$
+    % $\tilde{H}(s) = \frac{\omega_0}{s^2 + \omega_0^2}$
 
-    Poles: $s_{1,2} = \pm j\omega_0$
+    % Poles: $s_{1,2} = \pm j\omega_0$
 
-    $h(t) = \sin (\omega_0 t) u (t)$
+    % $h(t) = \sin (\omega_0 t) u (t)$
 
-    \begin{Figure}
-        \centering
-        \includegraphics[width=\linewidth]{marginallyStable2.png}        
-    \end{Figure}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{marginallyStable2.png}        
+    % \end{Figure}
 
     \textbf{Unstable (Case 1)}
     \begin{itemize}
@@ -1078,29 +1064,29 @@
         $\lim_{t \to \infty}|h(t)| = \infty$
     \end{itemize}
 
-    E.g.
+    % E.g.
 
-    $\tilde{H}(s) = \frac{1}{s - \alpha}$
+    % $\tilde{H}(s) = \frac{1}{s - \alpha}$
 
-    Pole: $s = \alpha$
+    % Pole: $s = \alpha$
 
-    $h(t) = e^{\alpha t}u(t)$
+    % $h(t) = e^{\alpha t}u(t)$
 
-    \begin{Figure}
-        \centering
-        \includegraphics[width=\linewidth]{unstableCase1_1.png}        
-    \end{Figure}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{unstableCase1_1.png}        
+    % \end{Figure}
 
-    $\tilde{H}(s) = \frac{\omega_0}{(s - \alpha)^2 + \omega_0^2}$
+    % $\tilde{H}(s) = \frac{\omega_0}{(s - \alpha)^2 + \omega_0^2}$
 
-    Poles: $s_{1,2} = \alpha \pm j\omega_0$
+    % Poles: $s_{1,2} = \alpha \pm j\omega_0$
 
-    $h(t) = e^{\alpha t}\sin (\omega_0 t) u (t)$
+    % $h(t) = e^{\alpha t}\sin (\omega_0 t) u (t)$
 
-    \begin{Figure}
-        \centering
-        \includegraphics[width=\linewidth]{unstableCase1_2.png}        
-    \end{Figure}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{unstableCase1_2.png}        
+    % \end{Figure}
 
     \textbf{Unstable (Case 2)}
     \begin{itemize}
@@ -1109,29 +1095,29 @@
         $\lim_{t \to \infty}|h(t)| = \infty$
     \end{itemize}
 
-    E.g.
+    % E.g.
 
-    $\tilde{H}(s) = \frac{1}{s^2}$
+    % $\tilde{H}(s) = \frac{1}{s^2}$
 
-    Pole: $s_{1,2} = 0$
+    % Pole: $s_{1,2} = 0$
 
-    $h(t) = tu(t)$
+    % $h(t) = tu(t)$
 
-    \begin{Figure}
-        \centering
-        \includegraphics[width=\linewidth]{unstableCase2_1.png}        
-    \end{Figure}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{unstableCase2_1.png}        
+    % \end{Figure}
 
-    $\tilde{H}(s) = \frac{\omega_0}{(s^2 + \omega_0^2)^2}$
+    % $\tilde{H}(s) = \frac{\omega_0}{(s^2 + \omega_0^2)^2}$
 
-    Poles: $s_{1,2,3,4} = \pm j\omega_0, \pm j \omega_0$
+    % Poles: $s_{1,2,3,4} = \pm j\omega_0, \pm j \omega_0$
 
-    $h(t) = \frac{1}{2} \left[\omega_0^{-1}\sin(\omega_0 t) - t \cos(\omega_0 t)\right] u(t)$
+    % $h(t) = \frac{1}{2} \left[\omega_0^{-1}\sin(\omega_0 t) - t \cos(\omega_0 t)\right] u(t)$
 
-    \begin{Figure}
-        \centering
-        \includegraphics[width=\linewidth]{unstableCase2_2.png}        
-    \end{Figure}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{unstableCase2_2.png}        
+    % \end{Figure}
 
     \textbf{7.7 First Order System (Standard Form)}
 
@@ -1185,19 +1171,19 @@
             &\implies \tilde{H}(s) = \frac{\tilde{Y}(s)}{\tilde{X}(s)} = \frac{K \omega_n^2}{s^2 + 2 \zeta \omega_n s + \omega_n^2} \tag{7.29}
         \end{align*}
         Poles: $s_{1,2} = -\omega_n \zeta \pm \omega_n\left(\zeta^2 - 1\right)^{1/2}$
-        \item Damping
-        \begin{Figure}
-            \centering
-            \includegraphics[width=\linewidth]{overdamped.png}                
-        \end{Figure}
-        \begin{Figure}
-            \centering
-            \includegraphics[width=\linewidth]{criticallyDamped_undamped.png}                
-        \end{Figure}
-        \begin{Figure}
-            \centering
-            \includegraphics[width=\linewidth]{underdamped.png}                
-        \end{Figure}
+        % \item Damping
+        % \begin{Figure}
+        %     \centering
+        %     \includegraphics[width=\linewidth]{overdamped.png}                
+        % \end{Figure}
+        % \begin{Figure}
+        %     \centering
+        %     \includegraphics[width=\linewidth]{criticallyDamped_undamped.png}                
+        % \end{Figure}
+        % \begin{Figure}
+        %     \centering
+        %     \includegraphics[width=\linewidth]{underdamped.png}                
+        % \end{Figure}
     \end{itemize}
     
     \begin{itemize}
@@ -1237,45 +1223,45 @@
     \end{enumerate}
 
     \leavevmode\\
-    \textbf{1. DC gain ($\tilde{H}(s) = K_{dc}$)}
-    \begin{Figure}
-        \centering
-        \includegraphics[width=\linewidth]{bode_dcGain.png}        
-    \end{Figure}
+    % \textbf{1. DC gain ($\tilde{H}(s) = K_{dc}$)}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{bode_dcGain.png}        
+    % \end{Figure}
 
-    \textbf{2. Differentiator ($\tilde{H}(s) = K_d s$)}
-    \begin{Figure}
-        \centering
-        \includegraphics[width=\linewidth]{bode_differentiator1.png}        
-    \end{Figure}
-    \begin{Figure}
-        \centering
-        \includegraphics[width=\linewidth]{bode_differentiator2.png}        
-    \end{Figure}
+    % \textbf{2. Differentiator ($\tilde{H}(s) = K_d s$)}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{bode_differentiator1.png}        
+    % \end{Figure}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{bode_differentiator2.png}        
+    % \end{Figure}
 
-    \textbf{3. Integrator ($\tilde{H}(s) = K_i/s$)}
-    \begin{Figure}
-        \centering
-        \includegraphics[width=\linewidth]{bode_integrator.png}        
-    \end{Figure}
+    % \textbf{3. Integrator ($\tilde{H}(s) = K_i/s$)}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{bode_integrator.png}        
+    % \end{Figure}
 
-    \textbf{4. Zero factor ($\tilde{H}(s) = s/z_m + 1$)}
-    \begin{Figure}
-        \centering
-        \includegraphics[width=\linewidth]{bode_zeroFactor.png}        
-    \end{Figure}
+    % \textbf{4. Zero factor ($\tilde{H}(s) = s/z_m + 1$)}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{bode_zeroFactor.png}        
+    % \end{Figure}
 
-    \textbf{5. Pole factor ($\tilde{H}(s) = \frac{1}{s/p_n + 1}$)}
-    \begin{Figure}
-        \centering
-        \includegraphics[width=\linewidth]{bode_poleFactor.png}        
-    \end{Figure}
+    % \textbf{5. Pole factor ($\tilde{H}(s) = \frac{1}{s/p_n + 1}$)}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{bode_poleFactor.png}        
+    % \end{Figure}
 
-    \textbf{6. 2nd-order factor ($\tilde{H}(s) = \frac{\omega_n^2}{s^2+2\zeta\omega_ns + \omega_n^2}$)}
-    \begin{Figure}
-        \centering
-        \includegraphics[width=\linewidth]{bode_2ndOrder.png}        
-    \end{Figure}
+    % \textbf{6. 2nd-order factor ($\tilde{H}(s) = \frac{\omega_n^2}{s^2+2\zeta\omega_ns + \omega_n^2}$)}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{bode_2ndOrder.png}        
+    % \end{Figure}
 
     \textbf{8.2 Asymptotic Behavior of Bode Plots}
     \begin{Figure}
@@ -1346,17 +1332,17 @@
 
     \textbf{Sampling}
 
-    \begin{Figure}
-        \centering
-        \includegraphics[width=\linewidth]{continuousTimeSampling.png}        
-    \end{Figure}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{continuousTimeSampling.png}        
+    % \end{Figure}
 
     \textbf{Reconstruction}
 
-    \begin{Figure}
-        \centering
-        \includegraphics[width=\linewidth]{reconstruction.png}        
-    \end{Figure}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{reconstruction.png}        
+    % \end{Figure}
 
     \textbf{Nyquist Sampling Theorem:}
     \begin{itemize}
