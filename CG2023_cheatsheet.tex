@@ -794,7 +794,14 @@
         f(t) = \invlap{\tilde{F}(s)} = \frac{1}{2\pi j} \int_{\gamma - j \infty}^{\gamma + j \infty}\tilde{F}(s)ds \tag{6.9}
     \]
     
-    % TODO: solving linear differential equation
+    \textbf{Laplace}
+    \begin{align*}
+        \lap{y''} = {}&s^2 \lap{y} - sy(0) - y'(0)\\
+        \lap{y'''} = {}&s^3 \lap{y} - s^2 y(0) - s y'(0)\\
+                    &- y''(0)\\
+        \lap{y''''} = {}&s^4\lap{y} - s^3y(0) - s^2 y'(0)\\ 
+                    &- s y''(0) - y'''(0)
+    \end{align*}
 
     \textbf{\uline{Chapter 7}}
 

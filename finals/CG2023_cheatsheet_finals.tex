@@ -795,7 +795,13 @@
         f(t) = \invlap{\tilde{F}(s)} = \frac{1}{2\pi j} \int_{\gamma - j \infty}^{\gamma + j \infty}\tilde{F}(s)ds \tag{6.9}
     \]
     
-    % TODO: solving linear differential equation
+    \begin{align*}
+        \lap{y''} = {}&s^2 \lap{y} - sy(0) - y'(0)\\
+        \lap{y'''} = {}&s^3 \lap{y} - s^2 y(0) - s y'(0)\\
+                    &- y''(0)\\
+        \lap{y''''} = {}&s^4\lap{y} - s^3y(0) - s^2 y'(0)\\ 
+                    &- s y''(0) - y'''(0)
+    \end{align*}
 
     \textbf{\uline{Chapter 7}}
 
@@ -974,20 +980,6 @@
     where $x(t)$ is input, $y(t)$ is output, and $a_n, b_m$ are real constants.
 
     \textbf{7.6.1 Transfer Function}
-
-    Applying Laplace to both sides of (7.21) with initial conditions set to 0,
-    \[
-        \sum_{n=0}^{N}a_n \tilde{Y}(s)s^n = \sum_{m=0}^{M} b_m \tilde{X}(s)s^m \tag{7.22}
-    \]
-
-    \begin{align*}
-        \begin{split}
-            \tilde{H}(s) &= \frac{\tilde{Y}(s)}{\tilde{X}(s)}\\
-            % &= \left( \left. \sum_{m=0}^{M}b_ms^m \right/ \sum_{n=0}^{N}a_ns^n \right) \\
-            &= \frac{b_Ms^M + b_{M-1}s^{M-1} + \ldots + b_0}{a_Ns^N + a_{N-1}s^{N-1} + \ldots + a_0}
-        \end{split} \tag{7.23a}
-    \end{align*}
-
     \begin{align*}
         \begin{split}
             \tilde{H}(s) &= K\frac{\left(\frac{s}{z_1} + 1\right)\left(\frac{s}{z_2} + 1\right) \ldots \left(\frac{s}{z_M} + 1\right)}{\left(\frac{s}{p_1} + 1\right)\left(\frac{s}{p_2} + 1\right) \ldots \left(\frac{s}{p_N} + 1\right)}\\
@@ -1371,7 +1363,7 @@
 
     Nyquist sampling frequency / Nyquist rate $f_s = 2 f_m$
 
-    \textbf{\uline{9.3 Sampling Band-limited Bandpass\\Signal below Nyquist Rate}}
+    \textbf{\uline{9.3 Sampling Bandpass Signal below Nyquist}}
 
     \begin{enumerate}[label=(\alph*)]
         \item Overlapping spectral images ($f_c > 0.5B$)
