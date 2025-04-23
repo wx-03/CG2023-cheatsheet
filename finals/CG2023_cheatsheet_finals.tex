@@ -1181,7 +1181,7 @@
         \item Transfer function $\tilde{H}(s)$
         \begin{align*}
             &s^2 \tilde{Y}(s) + 2 \zeta \omega_ns\tilde{Y}(s) + \omega_n^2\tilde{Y}(s) = K \omega_n^2\tilde{X}(s)\\
-            &\implies \tilde{H}(s) = \frac{\tilde{Y}(s)}{\tilde{X}(s)} = \frac{K \omega_n^2}{s^2 + 2 \zeta \omega_n s + \omega_n^2} \tag{7.29}
+            &\implies \tilde{H}(s) = \frac{\tilde{Y}(s)}{\tilde{X}(s)} = \frac{K \omega_n^2}{s^2 + 2 \zeta \omega_n s + \omega_n^2} %\tag{7.29}
         \end{align*}
         Poles: $s_{1,2} = -\omega_n \zeta \pm \omega_n\left(\zeta^2 - 1\right)^{1/2}$
         % \item Damping
@@ -1206,6 +1206,13 @@
         \item Undamped system: conjugate imaginary poles, $\zeta = 0$
     \end{itemize}
 
+    Blue stuff: 
+    
+    $\sin{(\omega_0 t)}u(t)$: $+ \frac{j}{4}\left[\delta (f + f_0) - \delta (f - f_0)\right]$
+
+    $\cos{(\omega_0 t)u(t)}$: $+ \frac{1}{4}\left[\delta (f + f_0) + \delta (f - f_0)\right]$
+
+
     \textbf{\uline{Chapter 8}}
 
     % Bode plot: approximate visualization of frequency response, $\tilde{H}(j \omega)$ of a system
@@ -1217,7 +1224,7 @@
     %     \item 0 is not in the axis cuz it goes from 1 to 0.1 to 0.01 to 0.001...
     % \end{itemize}
 
-    \textbf{8.1 Construction of Bode Plots}
+    % \textbf{8.1 Construction of Bode Plots}
 
     % Need to express (7.23b) in a suitable form for each of the following cases:
     % \begin{itemize}
@@ -1226,7 +1233,7 @@
     %     \item Systems with integrators
     % \end{itemize}
 
-    Basic systems:
+    % Basic systems:
     \begin{enumerate}
         \item $\tilde{H}(s) = K_{dc}$: DC gain (constant)
         \item $\tilde{H}(s) = K_d s$: differentiator with gain $K_d$
