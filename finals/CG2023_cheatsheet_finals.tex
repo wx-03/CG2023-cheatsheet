@@ -22,7 +22,7 @@
 \graphicspath{{../images/}}
 
 \newenvironment{Figure}
-  {\par\medskip\noindent\minipage{\linewidth}}
+  {\noindent\minipage{\linewidth}}
   {\endminipage\par\medskip}
 
 % Remove caption labels
@@ -57,14 +57,14 @@
 }
 
 \begin{document}
-\fontsize{7}{9}\selectfont
+\fontsize{6}{8}\selectfont
 \fontfamily{qcs}\selectfont
 \begin{multicols*}{5}
-    \textbf{Euler's formula}
-    \begin{align*}
-        e^{j\theta}=\cos(\theta) + j\sin(\theta)\\
-        e^{-j\theta}=\cos(\theta)-j\sin(\theta)
-    \end{align*}
+    % \textbf{Euler's formula}
+    % \begin{align*}
+    %     e^{j\theta}=\cos(\theta) + j\sin(\theta)\\
+    %     e^{-j\theta}=\cos(\theta)-j\sin(\theta)
+    % \end{align*}
 
     \textbf{\uline{Chapter 1}}
 
@@ -120,49 +120,62 @@
         \item All bounded periodic signals are power signals
     \end{itemize}
     \textbf{u(t):}
+
     \begin{Figure}
         \centering
         \includegraphics[width=0.8\linewidth]{unitStep.png}
     \end{Figure}
+
     \textbf{sgn(t):}
+
     \begin{Figure}
         \centering
         \includegraphics[width=0.8\linewidth]{signum.png}
     \end{Figure}
+
     \textbf{rect$\left( \frac{t}{T}\right)$:}
+
     \begin{Figure}
         \centering
         \includegraphics[width=0.8\linewidth]{rect.png}
     \end{Figure}
+
     \textbf{tri$\left( \frac{t}{T}\right)$:}
+
     \begin{Figure}
         \centering
         \includegraphics[width=0.8\linewidth]{tri.png}
     \end{Figure}
+
     \textbf{sinc$\left(\frac{t}{T}\right)$:}
+
     \begin{Figure}
         \centering
         \includegraphics[width=0.8\linewidth]{sinc.png}
     \end{Figure}
+
     \textbf{$e^{-\alpha t}u(t)$: }
+
     \begin{Figure}
         \centering
         \includegraphics[width=0.8\linewidth]{rightSidedDecayingExp.png}
     \end{Figure}
+
     \textbf{$e^{-\alpha |t|}$: }
+
     \begin{Figure}
         \centering
         \includegraphics[width=0.8\linewidth]{twoSidedDecayingExp.png}
     \end{Figure}
-    \textbf{Sinusoidal signals}
-    \begin{align*}
-        x(t)&=\mu \cos(\omega_0t+\phi)\\
-        &= \mu\cos(2\pi f_0t + \phi)\\
-        &= \mu\cos(\frac{2\pi t}{T} + \phi)
-    \end{align*} \newline
-    \[
-        T_0=\frac{2\pi}{\omega_0}=\frac{1}{f_0}
-    \]
+    % \textbf{Sinusoidal signals}
+    % \begin{align*}
+    %     x(t)&=\mu \cos(\omega_0t+\phi)\\
+    %     &= \mu\cos(2\pi f_0t + \phi)\\
+    %     &= \mu\cos(\frac{2\pi t}{T} + \phi)
+    % \end{align*} \newline
+    % \[
+    %     T_0=\frac{2\pi}{\omega_0}=\frac{1}{f_0}
+    % \]
 
     \textbf{\uline{Chapter 2}}
 
@@ -240,7 +253,8 @@
     \textbf{Spectrum of a Complex Exponential Signal}
     \[
         \tilde{x}(t)=\mu e^{j(2\pi f_0t+\phi)} = \mu e^{j\phi} \times e^{j2\pi f_0t},
-    \]where $\mu$: magnitude spectrum, $\phi$: phase spectrum, $f_0$: frequency
+    \]
+    % where $\mu$: magnitude spectrum, $\phi$: phase spectrum, $f_0$: frequency
 
     \textbf{Spectrum of a Cosine Signal}
     \begin{align*}
@@ -507,10 +521,10 @@
     \[
         X_p(f)=\sum_{k=-\infty}^{\infty}c_k\delta (f-kf_p) \tag{4.16} 
     \]
-    \begin{Figure}
-        \centering
-        \includegraphics[width=\linewidth]{continuousFreqSpectrum_periodic.png}
-    \end{Figure}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{continuousFreqSpectrum_periodic.png}
+    % \end{Figure}
 
     \textbf{4.4.2.1 Spectrum of Dirac-$\delta$ Comb function}
 
@@ -1166,8 +1180,7 @@
         \end{itemize}
         \item Transfer function $\tilde{H}(s)$
         \begin{align*}
-            &s^2 \tilde{Y}(s) + 2 \zeta \omega_ns\tilde{Y}(s) + \omega_n^2\tilde{Y}(s)\\ 
-            &= K \omega_n^2\tilde{X}(s)\\
+            &s^2 \tilde{Y}(s) + 2 \zeta \omega_ns\tilde{Y}(s) + \omega_n^2\tilde{Y}(s) = K \omega_n^2\tilde{X}(s)\\
             &\implies \tilde{H}(s) = \frac{\tilde{Y}(s)}{\tilde{X}(s)} = \frac{K \omega_n^2}{s^2 + 2 \zeta \omega_n s + \omega_n^2} \tag{7.29}
         \end{align*}
         Poles: $s_{1,2} = -\omega_n \zeta \pm \omega_n\left(\zeta^2 - 1\right)^{1/2}$
@@ -1187,9 +1200,10 @@
     \end{itemize}
     
     \begin{itemize}
-        \item Overdamped system: distinct real poles
-        \item Critically damped system: repeated real poles
-        \item Underdamped system: conjugate complex poles
+        \item Overdamped system: distinct real poles, $\zeta > 1$
+        \item Critically damped system: repeated real poles, $\zeta = 1$
+        \item Underdamped system: conjugate complex poles,\\$0 < \zeta < 1$
+        \item Undamped system: conjugate imaginary poles, $\zeta = 0$
     \end{itemize}
 
     \textbf{\uline{Chapter 8}}
@@ -1205,12 +1219,12 @@
 
     \textbf{8.1 Construction of Bode Plots}
 
-    Need to express (7.23b) in a suitable form for each of the following cases:
-    \begin{itemize}
-        \item Systems without integrator and differentiator
-        \item Systems with differentiators
-        \item Systems with integrators
-    \end{itemize}
+    % Need to express (7.23b) in a suitable form for each of the following cases:
+    % \begin{itemize}
+    %     \item Systems without integrator and differentiator
+    %     \item Systems with differentiators
+    %     \item Systems with integrators
+    % \end{itemize}
 
     Basic systems:
     \begin{enumerate}
@@ -1277,27 +1291,24 @@
 
     High frequency:
     \begin{align*}
-        \lim_{\omega \to \infty} \angle \tilde{H}(j \omega) = \text{Pole-zero excess} \times (-90 \degree) \tag{8.4a}
+        \text{Pole-zero excess} \times (-90 \degree) \tag{8.4a}
     \end{align*}
 
     Low frequency:
     \begin{align*}
-        &\lim_{\omega \to 0} \angle \tilde{H}(j \omega) \\
-        =& \left[\text{No. of }\int dt - \text{No. of } \frac{d}{dt}\right] \times (-90 \degree) \tag{8.4b}
+        \left[\text{No. of }\int dt - \text{No. of } \frac{d}{dt}\right] \times (-90 \degree) \tag{8.4b}
     \end{align*}
 
     \textbf{Asymptotic slope of magnitude plot}
 
     High frequency:
     \begin{align*}
-        &\lim_{\omega \to \infty}\left[\text{Slope of } \left|\tilde{H}(j \omega)\right|\right]\\
-        =&\ [\text{Pole-zero excess}] \times (-20 \text{ dB/decade}) \tag{8.5a}
+        [\text{Pole-zero excess}] \times (-20 \text{ dB/decade}) \tag{8.5a}
     \end{align*}
 
     Low frequency:
     \begin{align*}
-        &\lim_{\omega \to 0}\left[\text{Slope of } \left|\tilde{H}(j \omega)\right|\right]\\
-        =& \left[\text{No. of} \int dt - \text{No. of } \frac{d}{dt}\right] \times (-20 \text{ dB/decade}) \tag{8.5a}
+        \left[\text{No. of} \int dt - \text{No. of } \frac{d}{dt}\right] \times (-20 \text{ dB/decade}) \tag{8.5a}
     \end{align*}
 
     \textbf{\uline{Chapter 9}}
@@ -1310,10 +1321,10 @@
         \item Impulse response: $h(t) = 2AB\sinc{2Bt}$
     \end{itemize}
 
-    \begin{Figure}
-        \centering
-        \includegraphics[width=\linewidth]{idealLPF.png}
-    \end{Figure}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{idealLPF.png}
+    % \end{Figure}
 
     \textbf{Ideal Band-Pass Filter (BPF)}
     \begin{itemize}
@@ -1323,21 +1334,21 @@
         $h(t)=2AB\sinc{Bt}\cos{(2\pi f_0t)}$
     \end{itemize}
 
-    \begin{Figure}
-        \centering
-        \includegraphics[width=\linewidth]{idealBPF.png}
-    \end{Figure}
+    % \begin{Figure}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{idealBPF.png}
+    % \end{Figure}
 
     \textbf{\uline{9.2 Continuous-time Sampling and\\Reconstruction of Signals}}
 
-    \textbf{Sampling}
+    % \textbf{Sampling}
 
     % \begin{Figure}
     %     \centering
     %     \includegraphics[width=\linewidth]{continuousTimeSampling.png}        
     % \end{Figure}
 
-    \textbf{Reconstruction}
+    % \textbf{Reconstruction}
 
     % \begin{Figure}
     %     \centering
@@ -1345,10 +1356,10 @@
     % \end{Figure}
 
     \textbf{Nyquist Sampling Theorem:}
-    \begin{itemize}
-        \item A band-limited signal, which has no frequency components higher than $f_m$ Hz ($f_m$ = bandwidth = highest freq component), may be completely described by specifying the values of the signal at insants of time separated by no more than $\frac{1}{2f_m}$ seconds.
-        \item A band-limited signal, which has no frequency components higher than $f_m$ Hz, may be completely recovered from a knowledge of its samples taken at a rate of no less than $2 f_m$ samples/second.
-    \end{itemize}
+    % \begin{itemize}
+    %     \item A band-limited signal, which has no frequency components higher than $f_m$ Hz ($f_m$ = bandwidth = highest freq component), may be completely described by specifying the values of the signal at insants of time separated by no more than $\frac{1}{2f_m}$ seconds.
+    %     \item A band-limited signal, which has no frequency components higher than $f_m$ Hz, may be completely recovered from a knowledge of its samples taken at a rate of no less than $2 f_m$ samples/second.
+    % \end{itemize}
 
     Nyquist sampling frequency / Nyquist rate $f_s = 2 f_m$
 
