@@ -7,7 +7,6 @@
 \usepackage{microtype}
 \usepackage{pdfpages}
 \usepackage{amsmath, amssymb, amsthm}
-\usepackage{gensymb}
 \usepackage{anyfontsize}
 \usepackage[shortlabels]{enumitem}
 \usepackage{graphicx, float}
@@ -46,6 +45,8 @@
 
 \newcommand{\fourier}[1]{\Im\left\{#1\right\}}
 \newcommand{\invfourier}[1]{\Im^{-1}\left\{#1\right\}}
+
+\newcommand{\degree}{\ensuremath{^\circ}}
 
 % No spaces before and after math mode
 \expandafter\def\expandafter\normalsize\expandafter{%
@@ -1163,6 +1164,7 @@
         \end{align*}
     \end{itemize}
 
+    \newcolumn
     \textbf{7.8 Second Order System (Standard Form)}
     \textbf{7.8.1 Differential Eqn and Transfer Func}
     \begin{itemize}
@@ -1285,6 +1287,7 @@
     % \end{Figure}
 
     \textbf{8.2 Asymptotic Behavior of Bode Plots}
+
     \begin{Figure}
         \centering
         \includegraphics[width=\linewidth]{bode1.png}        
@@ -1294,6 +1297,7 @@
         \includegraphics[width=\linewidth]{bode2.png}        
     \end{Figure}
 
+    \newcolumn
     \textbf{Asymptotic phase of phase plot}
 
     High frequency:
